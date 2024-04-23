@@ -1,6 +1,6 @@
 // Find your friend
 
-let age =23
+let age = prompt("enter age :");
 
 
 if (age < 13) {

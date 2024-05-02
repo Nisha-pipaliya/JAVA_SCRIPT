@@ -1,14 +1,10 @@
 
 //ARRAY TO LOWERCASE at alternative postion
-let arr = ["RED", "AND", "WHITE"];
-let lowercaseArray = [];
-  
-for (let i = 0; i < arr.length; i++) 
-{
-    let array = arr[i];
-    if (array !== "RED" && array !== "WHITE")
-     {
-        array = array.toLowerCase();
+let arr= ["RED", "AND", "WHITE"];
+for (let i = 0; i < arr.length; i++) {
+    if (i%2==0) {
+        console.log(arr[i]);
+    } else {
+        console.log(arr[i].toLowerCase());
     }
-    console.log(array);
 }

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee details</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form id="employeeForm" onsubmit="submitForm(event)" align="center">
+        <h2>hire employee details</h2>
+        <input type="text" id="name" placeholder="Name" required>
+        <select id="jobRole" required>
+            <option value="">Select Job Role</option>
+            <option value="senior">IT</option>
+            <option value="junior">Mnager</option>
+        </select>
+        <select id="department" required>
+            <option value="">Select Department</option>
+            <option value="Engineering">Engineering</option>
+            <option value="HR">HR</option>
+        </select>
+        <input type="number" id="salary" placeholder="Salary" required>
+        <input type="email" id="contactEmail" placeholder="Contact Email" required>
+        <input type="number" id="workExperience" placeholder="prev Work Experience in year" required>
+        <button type="submit">hire</button>
+    </form>
+
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Job Role</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Contact Email</th>
+                <th>Work Experience</th>
+                <th>Role Type</th>
+                <th>Fire Employee</th>
+            </tr>
+        </thead>
+        <tbody id="employeeData">
+        </tbody>
+    </table>
+
+    <div id="countSection">
+        <p> Active Employees: <span id="activeEmployeeCount"></span></p>
+        <p>Total Salary: <span id="totalSalary"></span></p>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

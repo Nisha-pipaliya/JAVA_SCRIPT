@@ -1,0 +1,66 @@
+ body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    }
+    
+    #employeeForm{
+        border: 2px solid black;
+        margin-right: 35%;
+        margin-left: 35%;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+        padding-top: 2%;
+    }
+    #employeeForm input {
+        margin: 10px;
+    }
+    #employeeForm select {
+        margin: 10px;
+    }
+    #employeeForm button {
+    padding: 5px 10px;
+    background-color:#cdc551;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    }
+    
+    #employeeTable 
+    {
+        margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f6f6f3;
+    border-radius: 5px;
+    }
+    
+    th,td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #080606;
+    }
+    
+    th {
+    background-color:#cdc551;
+    color: #060000;
+    font-size: large;
+
+    }
+
+
+ td button {
+    padding: 3px 8px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    } 

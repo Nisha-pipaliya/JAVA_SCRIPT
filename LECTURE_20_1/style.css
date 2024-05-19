@@ -1,0 +1,56 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 150px solid rgb(41, 73, 81);
+}
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #17D4FE;
+    font-size: 90px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 7px;
+    font-weight: bolder;
+    border: 10px solid #223236;
+    border-radius: 20px;
+    text-shadow: 1px 1px 30px rgba(0, 217, 255, 0.5);
+
+
+}
+#DateDisplay{
+    position: absolute;
+    margin-top: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #17D4FE;
+    font-size: 60px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 7px;
+    font-weight: bolder;
+    border: 8px solid #223236;
+    border-radius: 10px;
+    text-shadow: 1px 1px 30px rgba(0, 217, 255, 0.5);
+
+
+}

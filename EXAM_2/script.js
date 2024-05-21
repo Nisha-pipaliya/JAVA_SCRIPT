@@ -1,33 +1,31 @@
 
 
 // timer
-const showTime = () => {
-    let date = new Date();
 
-    let h = date.getHours();
-    let m = date.getMinutes();
-    let s = date.getSeconds();
-    let session = "AM";
-    if (h==0) {
-        h=12;
-    }
+let hour = 0;
+    let minute = 1;
+    let second = 59;
 
-    if (h >12) {
-        h = h- 12;
-        session = "PM";
-    }
-    h = (h<10) ?"0" +h : h;
-    m = (m<10) ?"0" + m : m;
-    s = (s<10) ?"0" +s : s;
+    let id = setInterval(() => {
+        document.getElementById('hour').innerText = hour < 10 ? '0' + hour : hour;
+        document.getElementById('minute').innerText = minute < 10 ? '0' + minute : minute;
+        document.getElementById('second').innerText = second < 10 ? '0' + second : second;
 
-    let time = h + ":" + m + ":" + s + " " + session;
-    document.getElementById("ClockDisplay").innerText = time;
-    document.getElementById("ClockDisplay").textContent = time;
- 
-   setTimeout(showTime, 1000);
-}
-
-showTime();
+        if (hour === 0 && minute === 0 && second === 0) {
+            clearInterval(id);
+        }
+        if (second === 0) {
+            if (minute === 0) {
+                hour--;
+                minute = 59;
+            } else {
+                minute--;
+            }
+            second = 59;
+        } else {
+            second--;
+        }
+    }, 1000);
 
 
 // form....

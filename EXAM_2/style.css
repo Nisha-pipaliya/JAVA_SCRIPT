@@ -31,22 +31,33 @@ body{
     /* timer */
 
 
-    .clock {
-        position: absolute;
-        top: 120%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
-        color:#223337;
-        font-size: 40px;
-        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        letter-spacing: 7px;
-        font-weight: bolder;
-        border: 5px solid #223236;
-        border-radius: 20px;
-        text-shadow: 1px 1px 30px rgba(0, 217, 255, 0.5);
+    .body2{
     
-    
-    }
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        margin-top: 100PX;
+        align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    margin: 0 10px;
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 5px;
+}
 
     /* form */
 
@@ -57,7 +68,7 @@ body{
         border: 1px solid #ccc;
         border-radius: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 200px;
+        margin-top: 30px;
         background-color: #31393b;
     }
     .product-form div {

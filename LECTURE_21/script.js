@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('startBtn').addEventListener('click', startCounters);
     document.getElementById('stopBtn').addEventListener('click', stopCounters);
 
-    function startCounters() {
+    const startCounters=()=> {
         maxValues.forEach((_, index) => {
             maxValues[index] = Math.floor(Math.random() * 100) + 1;
         });
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startCounter();
     }
 
-    function startCounter() {
+    const startCounter=()=> {
         if (currentCounter < counters.length) {
             let counter = counters[currentCounter];
             let count = 0;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function stopCounters() {
+const stopCounters=() =>{
         clearInterval(interval);
         currentCounter = counters.length; 
     }

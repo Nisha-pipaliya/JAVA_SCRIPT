@@ -1,12 +1,11 @@
-
-let  Question = [
+let Quiz = [
     {
         question: "What is the correct syntax for referring to an external script called script.js?",
         opA: "script name=script.js",
         opB: "script src=script.js",
         opC: "script href=script.js",
         opD: "script ref=script.js",
-        true: "script src=script.js"
+        trueAns: "script src=script.js"
     },
     {
         question: "How do you write 'Hello World' in an alert box?",
@@ -14,7 +13,7 @@ let  Question = [
         opB: "alertBox('Hello World');",
         opC: "alert('Hello World');",
         opD: "msgBox('Hello World');",
-        true: "alert('Hello World');"
+        trueAns: "alert('Hello World');"
     },
     {
         question: "Which of the following is not a reserved word in JavaScript?",
@@ -22,7 +21,7 @@ let  Question = [
         opB: "throws",
         opC: "program",
         opD: "short",
-        true: "program"
+        trueAns: "program"
     },
     {
         question: "What is the correct way to write a JavaScript array?",
@@ -30,7 +29,7 @@ let  Question = [
         opB: "var colors = 'red', 'green', 'blue'",
         opC: "var colors = ['red', 'green', 'blue']",
         opD: "var colors = 1 = ('red'), 2 = ('green'), 3 = ('blue')",
-        true: "var colors = ['red', 'green', 'blue']"
+        trueAns: "var colors = ['red', 'green', 'blue']"
     },
     {
         question: "Which event occurs when the user clicks on an HTML element?",
@@ -38,7 +37,7 @@ let  Question = [
         opB: "onclick",
         opC: "onmouseclick",
         opD: "onmouseover",
-        true: "onclick"
+        trueAns: "onclick"
     },
     {
         question: "How do you declare a JavaScript variable?",
@@ -46,7 +45,7 @@ let  Question = [
         opB: "var carName;",
         opC: "v carName;",
         opD: "string carName;",
-        true: "var carName;"
+        trueAns: "var carName;"
     },
     {
         question: "What is the correct JavaScript syntax to change the content of the HTML element below?\n```html\n<p id='demo'>This is a demonstration.</p>\n```",
@@ -54,7 +53,7 @@ let  Question = [
         opB: "document.getElementByName('demo').innerHTML = 'Hello World!';",
         opC: "document.getElementByTagName('p').innerHTML = 'Hello World!';",
         opD: "document.getElement('p').innerHTML = 'Hello World!';",
-        true: "document.getElementById('demo').innerHTML = 'Hello World!';"
+        trueAns: "document.getElementById('demo').innerHTML = 'Hello World!';"
     },
     {
         question: "How do you create a function in JavaScript?",
@@ -62,7 +61,7 @@ let  Question = [
         opB: "function:myFunction()",
         opC: "function = myFunction()",
         opD: "function => myFunction()",
-        true: "function myFunction()"
+        trueAns: "function myFunction()"
     },
     {
         question: "How do you call a function named 'myFunction'?",
@@ -70,7 +69,7 @@ let  Question = [
         opB: "call function myFunction()",
         opC: "myFunction()",
         opD: "Call.myFunction()",
-        true: "myFunction()"
+        trueAns: "myFunction()"
     },
     {
         question: "How can you add a comment in JavaScript?",
@@ -78,7 +77,7 @@ let  Question = [
         opB: "<!--This is a comment-->",
         opC: "//This is a comment",
         opD: "*This is a comment*",
-        true: "//This is a comment"
+        trueAns: "//This is a comment"
     },
     {
         question: "What will the following code return: Boolean(10 > 9)?",
@@ -86,7 +85,7 @@ let  Question = [
         opB: "true",
         opC: "NaN",
         opD: "undefined",
-        true: "true"
+        trueAns: "true"
     },
     {
         question: "Which operator is used to assign a value to a variable?",
@@ -94,7 +93,7 @@ let  Question = [
         opB: "x",
         opC: "=",
         opD: "-",
-        true: "="
+        trueAns: "="
     },
     {
         question: "What is the correct JavaScript syntax to write 'Hello World'?",
@@ -102,7 +101,7 @@ let  Question = [
         opB: "document.write('Hello World')",
         opC: "response.write('Hello World')",
         opD: "('Hello World').document.write",
-        true: "document.write('Hello World')"
+        trueAns: "document.write('Hello World')"
     },
     {
         question: "Which method can be used to find the length of a string?",
@@ -110,7 +109,7 @@ let  Question = [
         opB: "getLength()",
         opC: "strlen()",
         opD: "length",
-        true: "length"
+        trueAns: "length"
     },
     {
         question: "Which built-in method sorts the elements of an array?",
@@ -118,7 +117,7 @@ let  Question = [
         opB: "order()",
         opC: "sort()",
         opD: "arrange()",
-        true: "sort()"
+        trueAns: "sort()"
     },
     {
         question: "Which of the following is a way to create an object in JavaScript?",
@@ -126,7 +125,7 @@ let  Question = [
         opB: "var obj = ();",
         opC: "var obj = [];",
         opD: "var obj = <>;",
-        true: "var obj = {};"
+        trueAns: "var obj = {};"
     },
     {
         question: "How do you round the number 7.25 to the nearest integer?",
@@ -134,7 +133,7 @@ let  Question = [
         opB: "Math.round(7.25)",
         opC: "rnd(7.25)",
         opD: "round(7.25)",
-        true: "Math.round(7.25)"
+        trueAns: "Math.round(7.25)"
     },
     {
         question: "How can you detect the client’s browser name?",
@@ -142,7 +141,7 @@ let  Question = [
         opB: "browser.name",
         opC: "client.navName",
         opD: "window.browser",
-        true: "navigator.appName"
+        trueAns: "navigator.appName"
     },
     {
         question: "Which JavaScript method is used to access an HTML element by id?",
@@ -150,7 +149,7 @@ let  Question = [
         opB: "getElement(id)",
         opC: "getElementByID()",
         opD: "getIdElement()",
-        true: "getElementById()"
+        trueAns: "getElementById()"
     },
     {
         question: "Which of the following is the correct syntax to display 'Hello World' in a dialog box using JavaScript?",
@@ -158,7 +157,7 @@ let  Question = [
         opB: "msg('Hello World');",
         opC: "alert('Hello World');",
         opD: "msgBox('Hello World');",
-        true: "alert('Hello World');"
+        trueAns: "alert('Hello World');"
     },
     {
         question: "Which of the following is not a JavaScript data type?",
@@ -166,78 +165,102 @@ let  Question = [
         opB: "number",
         opC: "boolean",
         opD: "character",
-        true: "character"
+        trueAns: "character"
     }
 ];
+Quiz.map(ele => {
+    let Question = `<h5>${ele.question}</h5>`;
+    let btn1 = `<button>${ele.opA}</button>`;
+    let btn2 = `<button>${ele.opB}</button>`;
+    let btn3 = `<button>${ele.opC}</button>`;
+    let btn4 = `<button>${ele.opD}</button>`;
 
+    let div = `<div>${Question}${btn1}${btn2}${btn3}${btn4}</div>`;
+    document.getElementById("quizContainer").innerHTML += div;
+});
 
-// display_Question
-
-const displayQuiz=() =>{
-    const form = document.getElementById("form");
-    form.innerHTML = ""; 
-    Question.forEach((ele, index) => {
-        const question = document.createElement('h5');
-        question.innerText = ele.question;
-        
-        const btn1 = document.createElement('button');
-        btn1.innerText = ele.opA;
-        btn1.onclick = () => checkAnswer(btn1, ele.true);
-
-        const btn2 = document.createElement('button');
-        btn2.innerText = ele.opB;
-        btn2.onclick = () => checkAnswer(btn2, ele.true);
-
-        const btn3 = document.createElement('button');
-        btn3.innerText = ele.opC;
-        btn3.onclick = () => checkAnswer(btn3, ele.true);
-
-        const btn4 = document.createElement('button');
-        btn4.innerText = ele.opD;
-        btn4.onclick = () => checkAnswer(btn4, ele.true);
-
-        const div = document.createElement('div');
-        div.append(question);
-        div.append(btn1);
-        div.append(btn2);
-        div.append(btn3);
-        div.append(btn4);
-        form.append(div);
-    });
-}
-
-function checkAnswer(button, correctAnswer) {
-    if (button.innerText === correctAnswer) {
-        button.classList.add("correct");
-    } else {
-        button.classList.add("incorrect");
+const handleQuestions = (e) => {
+    e.preventDefault();
+    let Q = document.getElementById("Question").value;
+    if (Q.length <= 8) {
+        document.getElementById("Question").style.borderColor = "red";
+        return;
     }
-}
+    let data = {
+        question: Q,
+        opA: document.getElementById("opA").value,
+        opB: document.getElementById("opB").value,
+        opC: document.getElementById("opC").value,
+        opD: document.getElementById("opD").value,
+        trueAns: document.getElementById("trueAns").value
+    };
+    Quiz.push(data);
+    displayQuiz();
+    document.getElementById("form").reset();
+};
+
+document.getElementById("Question").addEventListener("input", () => {
+    let Q = document.getElementById("Question").value;
+    if (Q.length >= 8) {
+        document.getElementById("Question").style.borderColor = "green";
+    } else {
+        document.getElementById("Question").style.borderColor = "red";
+    }
+});
+
+
+
+const displayQuiz = () => {
+    document.getElementById("quizContainer").innerHTML = "";
+    Quiz.forEach(element => {
+        let div = document.createElement('div');
+        let qsn = document.createElement('p');
+        qsn.innerHTML = element.question;
+
+
+        let a = document.createElement("button");
+        a.innerHTML = element.opA;
+        a.addEventListener("click", () => {
+            if (element.opA === element.trueAns) {
+                a.style.backgroundColor = "green";
+            } else {
+                a.style.backgroundColor = "red";
+            }
+        });
+
+        let b = document.createElement("button");
+        b.innerHTML = element.opB;
+        b.addEventListener("click", () => {
+            if (element.opB === element.trueAns) {
+                b.style.backgroundColor = "green";
+            } else {
+                b.style.backgroundColor = "red";
+            }
+        });
+
+        let c = document.createElement("button");
+        c.innerHTML = element.opC;
+        c.addEventListener("click", () => {
+            if (element.opC === element.trueAns) {
+                c.style.backgroundColor = "green";
+            } else {
+                c.style.backgroundColor = "red";
+            }
+        });
+
+        let d = document.createElement("button");
+        d.innerHTML = element.opD;
+        d.addEventListener("click", () => {
+            if (element.opD === element.trueAns) {
+                d.style.backgroundColor = "green";
+            } else {
+                d.style.backgroundColor = "red";
+            }
+        });
+        div.append(qsn, a, b, c, d);
+        form.appendChild(div);
+    });
+};
 
 displayQuiz();
-
-const questionForm = document.getElementById("questionForm");
-questionForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const newQuestion = {
-        question: document.getElementById("que").value,
-        opA: document.getElementById("option1").value,
-        opB: document.getElementById("option2").value,
-        opC: document.getElementById("option3").value,
-        opD: document.getElementById("option4").value,
-        true: document.getElementById("option1").value 
-        };
-    Question.push(newQuestion);
-    displayQuiz(); 
-
-    // button
-    let productElement = document.createElement('div');
-    productElement.setAttribute('class', 'product-details');
-});
-let deleteButton = document.createElement('button');
-deleteButton.textContent = 'Delete';
-deleteButton.addEventListener('click', function() {
-    productElement.remove();
-});
-
-productElement.append(deleteButton);
+document.getElementById("form").addEventListener("submit", handleQuestions);

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validations</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+        .success {
+            border: 1px solid green;
+        }
+        .error-text {
+            color: red;
+        }
+        .shake {
+            animation: shake 0.5s;
+            animation-iteration-count: 1;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" placeholder="Enter your name">
+        <span class="error-text"></span>
+        <br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Enter your age">
+        <span class="error-text"></span>
+        <br><br>
+
+        <label for="pswrd">Password:</label>
+        <input type="password" name="pswrd" id="pswrd" placeholder="Enter your password">
+        <span class="error-text"></span>
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <script src="./script.js"></script>
+</body>
+</html>

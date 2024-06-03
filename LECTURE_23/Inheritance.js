@@ -19,7 +19,6 @@ class Office{
     }
 }
 
-
 class Manager extends Office{
     constructor(id,name,number,salary,department){
     super(id,name,number,salary)
@@ -30,9 +29,6 @@ class Manager extends Office{
         return `${super.displayDetails()}, Department: ${this.department}`;
     }
 }
-
-
-
 
 class Employee extends Manager{
     constructor(id,name,number,salary,position){

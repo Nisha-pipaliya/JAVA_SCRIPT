@@ -41,11 +41,22 @@ class Employee extends Manager {
         return `${super.displayDetails()}, Position: ${this.position}`;
     }
 }
+class client extends Employee{
+    constructor(id, name, number, salary,work){
+        super(id, name, number, salary);
+        this.work=work;
+    }
+    displayDetails(){
+    return`${super.displayDetails()},work:${this.work}`;
+    }
+}
 
 let officePerson = new Office(1, "Vicky", 12345, 12000);
 let managerPerson = new Manager(2, "Shriva", 1234, 123000, "Development Manager");
 let employeePerson = new Employee(3, "Grishva", 123456789, 100000, "financer");
+let clientperson=new client(4,grishma,123456,120000,"client")
 
 document.getElementById('officePerson').innerHTML = officePerson.displayDetails();
 document.getElementById('managerPerson').innerHTML = managerPerson.displayDetails();
 document.getElementById('employeePerson').innerHTML = employeePerson.displayDetails();
+document.getElementById('clientperson').innerHTML=clientperson.displayDetails();

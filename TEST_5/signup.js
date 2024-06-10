@@ -13,5 +13,5 @@ document.getElementById("signup-form").addEventListener("submit", function(event
         country: country
     };
     localStorage.setItem("user", JSON.stringify(user));
-    window.location.href = "./login.html";
+    window.location.href = "/TEST_5//login.html";
 });

@@ -15,7 +15,7 @@ const handleData = (e) => {
     document.getElementById("form").reset();
     alert('News added successfully!');
     window.location.href = "./index.html";
-     window.location.href="file:///D:/JAVA_SCRIPT/TEST_5/home.html"
+     window.location.href="/TEST_5/home.html"
 }
 
 document.getElementById("form").addEventListener("submit", handleData);

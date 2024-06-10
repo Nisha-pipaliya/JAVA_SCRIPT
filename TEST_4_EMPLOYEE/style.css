@@ -1,116 +1,40 @@
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-
-.form {
-    margin-bottom: 20px;
-}
-
-.form input[type="text"],
-.form input[type="number"] {
-    width: 250px;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px; 
-}
-
-.form input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4cafaf;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.form input[type="submit"]:hover {
-    background-color: #4598a0;
-}
-
-
-table {
-    width: 90%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
-table, th, td {
-    border: 3px solid #133738;
-    text-align: left;
-}
-
-th, td {
-    padding: 12px;
-}
-
-th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
-
-
-.product {
-    margin-left: 84px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.items {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    width: calc(33.333% - 40px);
+body, h1, div {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.items img {
-    max-width: 100%;
-    height: auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.items h3 {
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+.employee {
+    background-color: #fff;
+    border: 1px solid #979595;
+    padding: 15px;
     margin: 10px 0;
+    width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-
-
-.buy-button {
-    background-color: #4ca2af;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.buy-button:hover {
-    background-color:#087181;
-}
-
-/* midea Query */
-@media (max-width: 768px) {
-    .items {
-        width: calc(50% - 40px);
-    }
-}
-
-@media (max-width: 480px) {
-    .items {
-        width: 100%;
-    }
+#officePerson,
+ #managerPerson, 
+ #employeePerson,
+ #clientperson {
+    font-size: 16px;
+    color: #555;
 }

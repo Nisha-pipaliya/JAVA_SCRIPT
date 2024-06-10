@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>news</title>
+    <title>Add News</title>
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
-   <form id="news-form">
-    <input type="text" placeholder="enter title ...." id="title">
-    <input type="url" placeholder="choose file" id="img">
-    <input type="text" placeholder="description..." id="description">
-    <select name="country" id="country-news">
-        <option>India</option>
-        <option>Rusia</option>
-        <option>chin</option>
-        <option>Kerla</option>
-        <option>New-zelend</option>
-      
-    </select>
-    <button>submit</button>
-   </form>
-  
+    <form id="form">
+        <input type="text" name="title" id="title" placeholder="Enter Title">
+        <input type="url" name="img" id="img" placeholder="enter img Url..."> 
+        <select name="country" id="country">
+            <option value="" disabled selected>Enter Country</option>
+            <option value="India">India</option>
+            <option value="Australia">Australia</option>
+            <option value="Canada">Canada</option>
+            <option value="America">America</option>
+        </select>
+        <input type="text" name="description" id="description" placeholder="Enter Description">
+        <button type="submit">Submit</button>
+    </form>
+    <script src="./news.js"></script>
 </body>
-<script src="./news.js"></script>
 </html>

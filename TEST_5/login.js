@@ -1,29 +1,17 @@
-let signup =[].JSON.parse(localStorage.getItem("signup")) || {};
-
-const handleData =(e) =>{
-    e.preventDefault();
-
-    let pass = document.getElementById('pass').value;
-    let email = document.getElementById('email').value;
-
-
-let passElement = document.createElement('p');
-passElement.innerHTML = `pass: ${pass}`;
-
-let emailElement = document.createElement('p');
-emailElement.innerHTML = `email: ${email}`;
-
-
-profileElement.append(passElement);
-profileElement.append(emailElement);
-
-if(signup.pass==login.pass && signup.email == login.email){
-    alert("successfully")
-    document.getElementById("login-form").addEventListener("submit" ,handleData);
-}
-else{
-    alert("not successfully")
-}
-document.getElementById("login-form").addEventListener("submit" ,handleData);
-}
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    let loginEmail = document.getElementById("login-email").value;
+    let loginPassword = document.getElementById("login-password").value;
+    
+    let user = JSON.parse(localStorage.getItem("user"));
+    
+    if (user && user.email === loginEmail && user.password === loginPassword) {
+        alert("Login successful!");
+        localStorage.setItem("loggedIn", true);
+        window.location.href = "./home.html";
+     
+    } else {
+        alert("Please fill out the sign up form below !");
+    }
+});
 

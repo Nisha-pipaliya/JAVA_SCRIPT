@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="./home.css">
 </head>
 <body>
-    <form id="login-form">
-        <input type="text" placeholder="email" id="email-login">
-        <input type="number" placeholder="password" id="pass-login">
-        <input type="submit" id="submit">
-    </form>
+    <div class="login-container">
+        <h2>Login</h2>
+        <h3 align="center">Varification password & Email</h3>
+        <form id="login-form">
+            <input type="email" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="./login.js"></script>
 </body>
-
-<script src="./login.js"></script>
 </html>

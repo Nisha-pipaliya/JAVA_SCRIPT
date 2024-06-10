@@ -1,24 +1,21 @@
-let news =[]
+let News = JSON.parse(localStorage.getItem('News')) || [];
 
-const handleData =(e)=>{
+const handleData = (e) => {
     e.preventDefault();
-
-    let title = document.getElementById('title').value;
-    let description = document.getElementById('description').value;
-
-
-    let nameElement = document.createElement('p');
-    nameElement.innerHTML = `Name: ${title}`;
-
-    let contentElement = document.createElement('p');
-    contentElement.innerHTML = `Content: ${description}`;
-
-    
-    nameElement.append(nameElement);
-    contentElement.append(descriptionElement);
-
-    news.push(data)
-
-
+    let news = {
+        title: document.getElementById("title").value,
+        img: document.getElementById("img").value,
+        description: document.getElementById("description").value,
+        country: document.getElementById("country").value,
+        likes: 0,
+        clicks: 0
+    };
+    News.push(news);
+    localStorage.setItem("News", JSON.stringify(News));
+    document.getElementById("form").reset();
+    alert('News added successfully!');
+    window.location.href = "./index.html";
+     window.location.href="file:///D:/JAVA_SCRIPT/TEST_5/home.html"
 }
-document.getElementById("news-form").addEventListener("submit" ,handleData);
+
+document.getElementById("form").addEventListener("submit", handleData);

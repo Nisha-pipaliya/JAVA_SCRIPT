@@ -12,6 +12,7 @@ const uiMaker = (data) => {
         img.src = ele.img;
 
         let title = document.createElement('h4');
+        
         title.innerHTML = ele.title;
 
         let country = document.createElement('h6');

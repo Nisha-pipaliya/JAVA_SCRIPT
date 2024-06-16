@@ -10,18 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let interval;
     const maxValues = [0, 0, 0, 0];
 
-    document.getElementById('startBtn').addEventListener('click', startCounters);
-    document.getElementById('stopBtn').addEventListener('click', stopCounters);
-
-    const startCounters=()=> {
-        maxValues.forEach((_, index) => {
-            maxValues[index] = Math.floor(Math.random() * 100) + 1;
-        });
-        currentCounter = 0;
-        startCounter();
-    }
-
-    const startCounter=()=> {
+    const startCounter = () => {
         if (currentCounter < counters.length) {
             let counter = counters[currentCounter];
             let count = 0;
@@ -35,15 +24,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentCounter++;
                     startCounter();
                 }
-            }, 50); 
+            }, 50);
         }
-    }
+    };
 
-const stopCounters=() =>{
+    const startCounters = () => {
+        maxValues.forEach((_, index) => {
+            maxValues[index] = Math.floor(Math.random() * 100) + 1;
+        });
+        currentCounter = 0;
+        startCounter();
+    };
+
+    const stopCounters = () => {
         clearInterval(interval);
-        currentCounter = counters.length; 
-    }
+        currentCounter = counters.length;
+    };
+
+    document.getElementById('startBtn').addEventListener('click', startCounters);
+    document.getElementById('stopBtn').addEventListener('click', stopCounters);
 });
+
+
 
 
 //second

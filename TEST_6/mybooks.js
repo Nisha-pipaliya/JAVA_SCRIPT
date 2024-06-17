@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const myBooksTableBody = document.getElementById('mybooks-table').getElementsByTagName('tbody')[0];
     const buyList = JSON.parse(localStorage.getItem('buy-list')) || [];
 
-    function displayMyBooks(books) {
+   const displayMyBooks=(books) =>{
         let tableRows = books.map(book => `
             <tr>
                 <td>${book.name}</td>

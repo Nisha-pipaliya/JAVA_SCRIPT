@@ -74,7 +74,7 @@ form button:hover {
     background-color: #1f2122;
 }
 
-/* Table styles */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -107,7 +107,7 @@ td button:hover {
     background-color: #ddd;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
     .container {
         width: 90%;

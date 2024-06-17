@@ -16,6 +16,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
         bookmarkTableBody.innerHTML = tableRows;
     };
-
     displayBookmarks(bookmarkList);
 });

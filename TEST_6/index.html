@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="mybooks.html">My Books</a>
+        <a href="bookmark.html">Bookmark</a>
+    </div>
+    <div class="container">
+        <h1 align="center">Add a Book</h1>
+        <form id="book-form">
+            <input type="text" id="book-name" placeholder="Book Name" required><br>
+            <input type="text" id="author-name" placeholder="Author Name" required><br>
+            <input type="text" id="book-description" placeholder="Book Description" required><br>
+            <input type="date" id="added-date" required><br>
+            <select id="book-category" required>
+                <option value="">Select Category</option>
+                <option value="Magical Realism  ">Fiction</option>
+               <option value="Biography">Non-Fiction</option>
+                <option value="Adventure">Science</option>
+                <option value="Horror">History</option>
+            </select><br>
+            <button type="submit">Add Book</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

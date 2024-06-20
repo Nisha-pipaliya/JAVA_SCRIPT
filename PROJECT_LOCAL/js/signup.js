@@ -17,5 +17,9 @@ const handleData = (e) => {
 
 }
 
+
 document.getElementById("Userdata").addEventListener("submit", handleData)
+
+
+
 document.getElementById("navbar").innerHTML = navbar()

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styles */
+#navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #343a40;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+#navbar a:hover {
+    background-color: #495057;
+    border-radius: 5px;
+}
+
+#navbar input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+}

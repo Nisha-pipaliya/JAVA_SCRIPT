@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Books</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Library Management System - My Books</title>
+ 
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="./pages/dashboard.html">Dashboard</a>
-        <a href="./pages/mybooks.html">My Books</a>
-        <a href="./pages/bookmark.html">Bookmark</a>
-    </div>
-    <div class="container">
-        <h1 align="center">My Books</h1>
-        <table id="mybooks-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Description</th>
-                    <th>Added Date</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- idhar book row insert hogi java script se ..-->
-            </tbody>
-        </table>
-    </div>
-    <script src="/components/mybooks.js"></script>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="mybooks.html">My Books</a></li>
+            <li><a href="bookmark.html">Bookmark</a></li>
+        </ul>
+    </nav>
+    <h1>My Books</h1>
+    <table id="buy-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Added Date</th>
+                <th>Category</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+              <!-- ishar dianamically bought book  ka data add hoga  -->
+        </tbody>
+    </table>
+    <script src="/js/mybook.js"></script>
 </body>
 </html>

@@ -3,44 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="../style.css">
+    <title>Library Management System - Dashboard</title>
+   
 </head>
 <body>
-    <div class="navbar">
-        <a href="./index.html">Home</a>
-        <a href="./pages/dashboard.html">Dashboard</a>
-        <a href="./pages/mybooks.html">My Books</a>
-        <a href="./pages/bookmark.html">Bookmark</a>
-    </div>
-    <div class="container">
-        <h1 align="center">Dashboard</h1>
-        <select id="filter-category">
-            <option value="">All Categories</option>
-            <option value="Fiction">Fiction</option>
-            <option value="Non-Fiction">Non-Fiction</option>
-            <option value="Science">Science</option>
-            <option value="History">History</option>
-        </select>
-        <table id="book-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Author</th>
-                    <th>Description</th>
-                    <th>Added Date</th>
-                    <th>Category</th>
-                    <th>Price</th>
-                    <th>Buy</th>
-                    <th>Bookmark</th>
-                </tr>
-            </thead>
-            <tbody>
-               
-                <!-- idhar book row insert hogi java script se .. -->
-            </tbody>
-        </table>
-    </div>
-    <script src="/components/dashboard.js"></script>
-</body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="mybooks.html">My Books</a></li>
+            <li><a href="bookmark.html">Bookmark</a></li>
+        </ul>
+    </nav>
+    <h1>Dashboard</h1>
+    <select id="category-filter">
+        <option value="All">All</option>
+        <option value="Fiction">Fiction</option>
+        <option value="Non-Fiction">Non-Fiction</option>
+        <option value="Science">Science</option>
+        <option value="History">History</option>
+    </select>
+    <table id="book-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Added Date</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Buy</th>
+                <th>Bookmark</th>
+            </tr>
+        </thead>
+    </table>
+
+ 
+        
+    </body>
+    <link rel="stylesheet" href="/js/dashboard.js" type="module">
 </html>

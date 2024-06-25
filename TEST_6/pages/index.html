@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Library Management System - Home</title>
+ 
+   
 </head>
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="mybooks.html">My Books</a>
-        <a href="bookmark.html">Bookmark</a>
-    </div>
-    <div class="container">
-        <h1 align="center">Add a Book</h1>
-        <form id="book-form">
-            <input type="text" id="book-name" placeholder="Book Name" required><br>
-            <input type="text" id="author-name" placeholder="Author Name" required><br>
-            <input type="text" id="book-description" placeholder="Book Description" required><br>
-            <input type="date" id="added-date" required><br>
-            <select id="book-category" required>
-                <option value="">Select Category</option>
-                <option value="Magical Realism  ">Fiction</option>
-               <option value="Biography">Non-Fiction</option>
-                <option value="Adventure">Science</option>
-                <option value="Horror">History</option>
-            </select><br>
-            <button type="submit">Add Book</button>
-        </form>
-    </div>
-    <script src="index.js"></script>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="mybooks.html">My Books</a></li>
+            <li><a href="bookmark.html">Bookmark</a></li>
+        </ul>
+    </nav>
+    <h1>Add a New Book</h1>
+    <form id="book-form">
+        <label for="book-name">Book Name:</label>
+        <input type="text" id="book-name" name="book-name" required><br>
+        <label for="author-name">Author Name:</label>
+        <input type="text" id="author-name" name="author-name" required><br>
+        <label for="book-description">Book Description:</label>
+        <input type="text" id="book-description" name="book-description" required><br>
+        <label for="added-date">Added Date:</label>
+        <input type="date" id="added-date" name="added-date" required><br>
+        <label for="book-category">Book Category:</label>
+        <select id="book-category" name="book-category" required>
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Science">Science</option>
+            <option value="History">History</option>
+        </select><br>
+        <button type="submit">Add Book</button>
+    </form>
+    <script src="js/main.js"></script>
 </body>
 </html>

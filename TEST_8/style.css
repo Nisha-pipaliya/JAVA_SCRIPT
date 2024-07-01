@@ -1,99 +1,180 @@
+/* style.css */
 
-
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-nav {
-    padding: 20px;
-    background-color: #f8f8f8;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header form {
+    display: flex;
+}
+
+header input[type="text"] {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+header button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #555;
+}
+
+aside {
+    width: 20%;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+}
+
+aside h2 {
+    margin-bottom: 1rem;
+}
+
+aside button {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+}
+
+aside button:hover {
+    background-color: #45a049;
+}
+
+main {
+    margin-left: 22%;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+main div {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: calc(33.333% - 2rem);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-nav input[type="text"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 80%;
-    max-width: 300px;
+main img {
+    max-width: 100%;
+    border-radius: 8px;
 }
 
-nav button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-nav button:hover {
-    background-color: #0056b3;
-}
-
-#products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-#products div {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin: 10px;
-    padding: 20px;
-    max-width: 300px;
-    width: 100%;
-    box-sizing: border-box;
+main h4, main h3, main p {
+    margin: 0.5rem 0;
     text-align: center;
 }
 
-#products img {
+main button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+main button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    aside {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    main div {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    main div {
+        width: calc(100% - 2rem);
+    }
+}
+
+/* Product Details Page */
+#product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#product-details div {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 80%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#product-details img {
     max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
-#products h4 {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-#products p {
-    font-size: 0.9em;
-    color: #666;
-}
-
-#products h3 {
-    margin: 5px 0;
-    font-size: 1em;
-    color: #333;
+#product-details h4, #product-details h3, #product-details p {
+    margin: 1rem 0;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
-    nav {
-        padding: 10px;
-    }
-
-    nav input[type="text"], nav button {
+    #product-details div {
         width: 100%;
-        margin: 5px 0;
-    }
-
-    #products {
-        padding: 10px;
-    }
-
-    #products div {
-        padding: 10px;
-        margin: 5px;
     }
 }

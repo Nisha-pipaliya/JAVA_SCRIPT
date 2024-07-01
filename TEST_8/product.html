@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>Product Details</h1>
+    </header>
+    <main id="product-details">
+        <!-- display products details...-->
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const product = JSON.parse(localStorage.getItem("product"));
+            if (product) {
+                let div = document.createElement("div");
+
+                let image = document.createElement("img");
+                image.src = product.thumbnail;
+
+                let title = document.createElement("h4");
+                title.textContent = product.title;
+
+                let price = document.createElement("h3");
+                price.textContent = `Price: $${product.price}`;
+
+                let category = document.createElement("h3");
+                category.textContent = `Category: ${product.category}`;
+
+                let rating = document.createElement("h3");
+                rating.textContent = `Rating: ${product.rating}`;
+
+                let description = document.createElement("p");
+                description.textContent = product.description;
+
+                div.append(image, title, price, category, rating, description);
+                document.getElementById("product-details").append(div);
+            }
+        });
+    </script>
+</body>
+</html>

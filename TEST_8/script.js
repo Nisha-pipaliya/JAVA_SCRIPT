@@ -1,5 +1,9 @@
+
+let products = [];
+
 const api = (data) => {
-    data.products.map((ele) => {
+    document.getElementById("products").innerHTML = "";
+    data.map((ele) => {
         let div = document.createElement("div");
 
         let image = document.createElement("img");
@@ -7,7 +11,6 @@ const api = (data) => {
 
         let title = document.createElement("h4");
         title.textContent = ele.title;
-
 
         let price = document.createElement("h3");
         price.textContent = `Price: $${ele.price}`;
@@ -18,7 +21,14 @@ const api = (data) => {
         let rating = document.createElement("h3");
         rating.textContent = `Rating: ${ele.rating}`;
 
-        div.append(image, title, price, category, rating);
+        let button = document.createElement("button");
+        button.textContent = "View Details";
+        button.addEventListener("click", () => {
+            localStorage.setItem("product", JSON.stringify(ele));
+            window.location.href = "./product.html";
+        });
+
+        div.append(image, title, price, category, rating, button);
         document.getElementById("products").append(div);
     });
 };
@@ -27,7 +37,8 @@ const getData = async () => {
     try {
         let request = await fetch("https://dummyjson.com/products/");
         let response = await request.json();
-        api(response);
+        products = response.products;
+        api(products);
     } catch (error) {
         console.error("Error fetching data:", error);
     }
@@ -35,57 +46,46 @@ const getData = async () => {
 
 getData();
 
-// sidebar
-
-const HandleSort = (orderBy) => {
-    if (orderBy == "LTH") {
-        let temp = proudcts.sort((a, b) => a.price - b.price)
-        api(temp)
-        console.log(temp);
+const handleSort = (orderBy) => {
+    let sortedProducts = [];
+    if (orderBy === "LTH") {
+        sortedProducts = [...products].sort((a, b) => a.price - b.price);
+    } else {
+        sortedProducts = [...products].sort((a, b) => b.price - a.price);
     }
-    else {
-        let temp = proudcts.sort((a, b) => b.price - a.price)
-        console.log(temp);
-        api(temp)
-    }
-
-}
+    api(sortedProducts);
+};
 
 const handleFilter = (category) => {
-    let temp = proudcts.filter((ele) => ele.category == category)
-    api(temp)
-
-}
-
-// searching 
+    let filteredProducts = products.filter((ele) => ele.category === category);
+    api(filteredProducts);
+};
 
 const handleSearch = (value) => {
-    let temp = proudcts.filter((ele) => ele.title.includes(value))
-    api(temp)
-}
+    let searchedProducts = products.filter((ele) =>
+         ele.title.toLowerCase().includes(value.toLowerCase()));
+    api(searchedProducts);
+};
 
 const handleSearchData = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+    let value = document.getElementById("searchValue").value;
+    handleSearch(value);
+};
 
-    let value = getValue("searchValue")
-
-    handleSearch(value)
-
-}
 const handleInput = (e) => {
-    let value = getValue("searchValue")
-    handleSearch(value)
-    if(e.key=="Enter"){
-        let value = getValue("searchValue")
-        handleSearch(value)
+    let value = document.getElementById("searchValue").value;
+    handleSearch(value);
+    if (e.key === "Enter") {
+        handleSearch(value);
     }
+};
 
-}
-
-document.getElementById("searchValue").addEventListener("keypress", handleInput)
-document.getElementById("searching").addEventListener("submit", handleSearchData)
-document.getElementById("LTH").addEventListener("click", () => HandleSort("LTH"))
-document.getElementById("HTL").addEventListener("click", () => HandleSort("HTL"))
-document.getElementById("men").addEventListener("click", () => handleFilter("men"))
-document.getElementById("women").addEventListener("click", () => handleFilter("women"))
-document.getElementById("kids").addEventListener("click", () => handleFilter("kids"))
+document.getElementById("searchValue").addEventListener("keypress", handleInput);
+document.getElementById("searching").addEventListener("submit", handleSearchData);
+document.getElementById("LTH").addEventListener("click", () => handleSort("LTH"));
+document.getElementById("HTL").addEventListener("click", () => handleSort("HTL"));
+document.getElementById("beauty").addEventListener("click", () => handleFilter("beauty"));
+document.getElementById("fragrances").addEventListener("click", () => handleFilter("fragrances"));
+document.getElementById("furniture").addEventListener("click", () => handleFilter("furniture"));
+document.getElementById("groceries").addEventListener("click", () => handleFilter("groceries"));

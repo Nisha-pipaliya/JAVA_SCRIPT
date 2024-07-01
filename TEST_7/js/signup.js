@@ -1,22 +1,17 @@
-export function createSignupPage(container) {
-    container.innerHTML = `
-        <h1>Sign Up</h1>
-        <form id="signupForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Sign Up</button>
-        </form>
-    `;
+import navbar from "../components/navbar.js";
+import getValue from "../components/helper.js";
 
-    const signupForm = container.querySelector('#signupForm');
-    signupForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const username = signupForm.username.value;
-        const password = signupForm.password.value;
-        localStorage.setItem('user', JSON.stringify({ username, password }));
-        alert('Sign up successful!');
-        loadPage('home');
-    });
-}
+const handleData = (e) => {
+    e.preventDefault();
+    let user = {
+        username: getValue("username"),
+        email: getValue("email"),
+        password: getValue("password")
+    };
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("isLogin", true);
+    window.location.href = "/TEST_7/index.html";
+};
+
+document.getElementById("signupForm").addEventListener("submit", handleData);
+document.getElementById("navbar").innerHTML = navbar();

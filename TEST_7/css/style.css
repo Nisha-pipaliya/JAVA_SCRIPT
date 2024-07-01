@@ -1,0 +1,23 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container .form-control {
+    margin-bottom: 1rem;
+}
+
+.form-container .form-control-submit {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}

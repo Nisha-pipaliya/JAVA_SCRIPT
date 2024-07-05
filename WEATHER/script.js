@@ -1,3 +1,4 @@
+// ------------------------------Get Elements
 const apiKey = '29cfa38ccf9b5e3b62a6d8ffe63cd4a0';
 const citynameInput = document.getElementById('cityname');
 const searchBtn = document.getElementById('search-btn');
@@ -10,44 +11,52 @@ const precipitationValueElement = document.getElementById('precipitation-value')
 const humidityValueElement = document.getElementById('humidity-value');
 const windValueElement = document.getElementById('wind-value');
 
-//---------------------------- display
+// ----------------------------Display Weather Data
 searchBtn.addEventListener('click', (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     const cityname = citynameInput.value.trim();
     if (cityname) {
+        // ----------------------------------- API
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${apiKey}&units=metric`)
             .then(response => response.json())
             .then(data => {
-                const weatherData = data;
-                const currentDate = new Date();
+                const weatherData = data; 
+                const currentDate = new Date(); 
+               
                 dateDaynameElement.textContent = getDayName(currentDate.getDay());
                 dateDayElement.textContent = `${currentDate.getDate()} ${getMonthName(currentDate.getMonth())}`;
+              
                 locationElement.textContent = weatherData.name;
                 weatherTempElement.textContent = `${weatherData.main.temp}°C`;
                 weatherDescElement.textContent = weatherData.weather[0].description;
+                
                 precipitationValueElement.textContent = `${weatherData.main.humidity}%`;
                 humidityValueElement.textContent = `${weatherData.main.humidity}%`;
                 windValueElement.textContent = `${weatherData.wind.speed} m/s`;
 
-                if (weatherData.weather[0].main.toLowerCase().includes('rain')) {
-                    document.body.className = 'rainy';
-                } else if (weatherData.weather[0].main.toLowerCase().includes('clear')) {
+                // -------------------Set Background Based on Weather Condition
+                const weatherMain = weatherData.weather[0].main.toLowerCase();
+                if (weatherMain.includes('rain')) {
+                    document.body.className = 'rainy'; 
+                } else if (weatherMain.includes('clear')) {
                     document.body.className = 'sunny';
                 } else {
-                    document.body.className = '';
+                    document.body.className = ''; 
                 }
             })
-            .catch(error => console.error(error));
+            .catch(error => console.error('Error fetching weather data:', error));
+    } else {
+        console.error('Please enter a valid city name.');
     }
 });
-// -------------------------------------date
 
+// -------------------------------------Date
 const getDayName = (day) => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    return days[day];
+    return days[day]; 
 };
 
 const getMonthName = (month) => {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    return months[month];
+    return months[month]; 
 };

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <td>${book.name}</td>
                 <td>${book.author}</td>
                 <td>${book.description}</td>
-                <td>${book.addedDate}</td>
+                <td>${book.date}</td>
                 <td>${book.category}</td>
                 <td>${book.price}</td>
             `;

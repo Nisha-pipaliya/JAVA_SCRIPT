@@ -1,31 +1,16 @@
-import navbar from "../components/navbar.js";
-import getValue from "../components/helper.js";
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-const userdetails = JSON.parse(localStorage.getItem("user"));
+    let loginEmail = document.getElementById("login-email").value;
+    let loginPassword = document.getElementById("login-password").value;
+    
+    let user = JSON.parse(localStorage.getItem("user"));
 
-document.getElementById("navbar").innerHTML = navbar();
-
-const handleData = (e) => {
-    e.preventDefault();
-    let user = {
-        email: getValue("email"),
-        password: getValue("password")
-    };
-
-    if (userdetails) {
-        if (userdetails.email !== user.email) {
-            alert("User not found with email: " + user.email);
-        } else if (userdetails.password !== user.password) {
-            alert("Password mismatch for email: " + user.email);
-        } else {
-            alert("Logged in as: " + user.email);
-            localStorage.setItem("isLogin", true);
-            document.getElementById("navbar").innerHTML = navbar("logout", userdetails.username);
-        }
+    if (user && user.email === loginEmail && user.password === loginPassword) {
+        alert("Login successful!");
+        localStorage.setItem("loggedIn", true);
+        window.location.href = "/TEST_7/index.html";
     } else {
-        alert("Please sign up first.");
-        window.location.href = "/TEST_7/pages/signup.html";
+        alert("Invalid credentials. Please try again or sign up!");
     }
-};
-
-document.getElementById("loginForm").addEventListener("submit", handleData);
+});

@@ -49,6 +49,10 @@ searchBtn.addEventListener('click', (e) => {
         console.error('Please enter a valid city name.');
     }
 });
+//----------------- img
+const imges =()=>{
+
+}
 
 // -------------------------------------Date
 const getDayName = (day) => {

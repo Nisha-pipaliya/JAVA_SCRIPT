@@ -1,18 +1,22 @@
+<!-- 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="D:\JAVA_SCRIPT\TEST_6\style.css">
     <title>Library Management System - Dashboard</title>
-   
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="mybooks.html">My Books</a></li>
-            <li><a href="bookmark.html">Bookmark</a></li>
+            
+            <li><a href="D:\JAVA_SCRIPT\TEST_6\index.html">Home</a></li>
+            <li><a href="D:\JAVA_SCRIPT\TEST_6\pages\dashboard.html">Dashboard</a></li>
+            <li><a href="D:\JAVA_SCRIPT\TEST_6\pages\mybooks.html">My Books</a></li>
+            <li><a href="D:\JAVA_SCRIPT\TEST_6\pages\bookmark.html">Bookmark</a></li>
         </ul>
     </nav>
     <h1>Dashboard</h1>
@@ -36,10 +40,86 @@
                 <th>Bookmark</th>
             </tr>
         </thead>
+        <tbody>
+         
+        </tbody>
     </table>
 
- 
+    <script src="/js/dashboard.js"></script>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar">
+       
+    </div>
+    <div id="dashboard">
+        <h1>Library Dashboard</h1>
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter">
+            <option value="all">All</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="biography">Biography</option>
+            <option value="science">Science</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="mystery">Mystery</option>
+            <option value="romance">Romance</option>
+            <option value="horror">Horror</option>
+        </select>
+        <p>Total Books: <span id="totalBooks"></span></p>
+        <table id="booksTable">
+            <thead>
+                <tr>
+                    <th>Author</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Publication Date</th>
+                    <th>Category</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Buy</th>
+                    <th>Bookmark</th>
+                </tr>
+            </thead>
+            <tbody>
         
-    </body>
-    <link rel="stylesheet" href="/js/dashboard.js" type="module">
+            </tbody>
+        </table>
+    </div>
+    <script src="/js/dashboard.js" type="module"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+    <h1>Books Dashboard</h1>
+    <div id="books-container"></div>
+
+    <script src="/js/dashboard.js"></script>
+</body>
 </html>

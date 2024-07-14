@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; /* Light grey background */
+    background-color: #f8f9fa; 
 }
 
 .container-fluid {
@@ -8,32 +8,32 @@ body {
 }
 
 #navbar {
-    background-color: #343a40; /* Dark grey navbar */
+    background-color: #343a40;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 #navbar a {
-    color: #ffffff; /* White text */
+    color: #ffffff; 
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 #navbar a:hover {
-    color: #17a2b8; /* Light blue on hover */
+    color: #17a2b8; 
 }
 
 .btn {
-    background-color: #007bff; /* Navy blue buttons */
-    color: #ffffff; /* White text */
+    background-color: #007bff; 
+    color: #ffffff;
     border: none;
     margin-right: 10px;
     transition: background-color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Darker navy blue on hover */
+    background-color: #0056b3; 
 }
 
 #filters {
@@ -54,12 +54,12 @@ body {
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Lift card on hover */
+    transform: translateY(-5px); 
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    color: #343a40; /* Dark grey headings */
+    color: #343a40; 
 }
 
 .form-control {
@@ -79,8 +79,6 @@ h2 {
 .fadeIn {
     animation: fadeIn 0.5s ease-in-out;
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     #navbar {
         justify-content: center;

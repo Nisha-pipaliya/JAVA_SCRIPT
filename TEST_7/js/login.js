@@ -1,5 +1,4 @@
-import navbar from "/test_7/components/navbar.js";
-import getValue from "/test_7/components/helper.js";
+
 
 const userdetails = JSON.parse(localStorage.getItem("user"));
 
@@ -24,7 +23,7 @@ const handleData = (e) => {
         }
     } else {
         alert("Please sign up first.");
-        window.location.href = "/test_7/pages/signup.html";
+        window.location.href = "/TEST_7/pages/signup.html";
     }
 };
 

@@ -1,23 +1,92 @@
-*{
-    margin: 0%;
-    padding: 0%;
-}
-.form-container {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
 }
 
-.form-container .form-control {
-    margin-bottom: 1rem;
+.container-fluid {
+    padding: 20px;
 }
 
-.form-container .form-control-submit {
-    width: 100%;
+#navbar {
+    background-color: #343a40; /* Dark grey navbar */
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-.text-center {
-    text-align: center;
+#navbar a {
+    color: #ffffff; /* White text */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+#navbar a:hover {
+    color: #17a2b8; /* Light blue on hover */
+}
+
+.btn {
+    background-color: #007bff; /* Navy blue buttons */
+    color: #ffffff; /* White text */
+    border: none;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker navy blue on hover */
+}
+
+#filters {
+    margin-bottom: 20px;
+}
+
+#placeList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #343a40; /* Dark grey headings */
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #navbar {
+        justify-content: center;
+    }
+    #filters {
+        flex-direction: column;
+        align-items: center;
+    }
 }

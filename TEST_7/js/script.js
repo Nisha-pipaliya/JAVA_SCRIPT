@@ -1,9 +1,7 @@
-import navbar from "/test_7/components/navbar.js";
-
 let userdetails = JSON.parse(localStorage.getItem("user"));
 let isLogin = localStorage.getItem("isLogin") || false;
 if (!isLogin) {
-    window.location.href = "/test_7/pages/login.html";
+    window.location.href = "/TEST_7/pages/login.html";
 }
 if (userdetails) {
     document.getElementById("navbar").innerHTML = navbar("logout", userdetails.username);
@@ -277,7 +275,7 @@ document.getElementById("share").addEventListener("click", () => handlePlacesDat
 
 handlePlacesData(places);
 
-// Search functionality
+// Search 
 const handleSearch = (value) => {
     let temp = places.filter((place) => place.title.toLowerCase().includes(value.toLowerCase()));
     handlePlacesData(temp);

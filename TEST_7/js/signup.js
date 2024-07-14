@@ -1,5 +1,4 @@
-import navbar from "/test_7/components/navbar.js";
-import getValue from "/test_7/components/helper.js";
+
 
 const handleData = (e) => {
     e.preventDefault();
@@ -10,7 +9,7 @@ const handleData = (e) => {
     };
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("isLogin", true);
-    window.location.href = "/test_7/";
+    window.location.href = "/TEST_7/pages/login.html";
 };
 
 document.getElementById("signupForm").addEventListener("submit", handleData);

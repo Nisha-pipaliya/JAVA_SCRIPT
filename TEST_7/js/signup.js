@@ -1,20 +1,17 @@
-document.getElementById("signup-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+import navbar from "/test_7/components/navbar.js";
+import getValue from "/test_7/components/helper.js";
 
-    let fullName = document.getElementById("fullname").value;
-    let email = document.getElementById("email").value;
-    let imgUrl = document.getElementById("imgUrl").value;
-    let password = document.getElementById("password").value;
-    let country = document.getElementById("country").value;
-
+const handleData = (e) => {
+    e.preventDefault();
     let user = {
-        fullName: fullName,
-        email: email,
-        imgUrl: imgUrl,
-        password: password,
-        country: country
+        username: getValue("username"),
+        email: getValue("email"),
+        password: getValue("password")
     };
-
     localStorage.setItem("user", JSON.stringify(user));
-    window.location.href = "/TEST_7/pages/login.html";
-});
+    localStorage.setItem("isLogin", true);
+    window.location.href = "/test_7/";
+};
+
+document.getElementById("signupForm").addEventListener("submit", handleData);
+document.getElementById("navbar").innerHTML = navbar();

@@ -1,16 +1,31 @@
-document.getElementById("login-form").addEventListener("submit", function(event) {
-    event.preventDefault();
+import navbar from "/test_7/components/navbar.js";
+import getValue from "/test_7/components/helper.js";
 
-    let loginEmail = document.getElementById("login-email").value;
-    let loginPassword = document.getElementById("login-password").value;
-    
-    let user = JSON.parse(localStorage.getItem("user"));
+const userdetails = JSON.parse(localStorage.getItem("user"));
 
-    if (user && user.email === loginEmail && user.password === loginPassword) {
-        alert("Login successful!");
-        localStorage.setItem("loggedIn", true);
-        window.location.href = "/TEST_7/index.html";
+document.getElementById("navbar").innerHTML = navbar();
+
+const handleData = (e) => {
+    e.preventDefault();
+    let user = {
+        email: getValue("email"),
+        password: getValue("password")
+    };
+
+    if (userdetails) {
+        if (userdetails.email !== user.email) {
+            alert("User not found with email: " + user.email);
+        } else if (userdetails.password !== user.password) {
+            alert("Password mismatch for email: " + user.email);
+        } else {
+            alert("Logged in as: " + user.email);
+            localStorage.setItem("isLogin", true);
+            document.getElementById("navbar").innerHTML = navbar("logout", userdetails.username);
+        }
     } else {
-        alert("Invalid credentials. Please try again or sign up!");
+        alert("Please sign up first.");
+        window.location.href = "/test_7/pages/signup.html";
     }
-});
+};
+
+document.getElementById("loginForm").addEventListener("submit", handleData);

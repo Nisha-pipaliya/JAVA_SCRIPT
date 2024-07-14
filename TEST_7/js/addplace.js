@@ -1,20 +1,33 @@
-let News = JSON.parse(localStorage.getItem('News')) || [];
+import navbar from "../components/navbar.js";
+import getValue from "../components/helper.js";
+
+let isLogin = localStorage.getItem("isLogin") || false;
+let userdetails = JSON.parse(localStorage.getItem("user"));
+
+if (!isLogin) {
+    window.location.href = "/test_7/pages/signup.html"; 
+}
+
+if (userdetails) {
+    document.getElementById("navbar").innerHTML = navbar("logout", userdetails.username);
+} else {
+    document.getElementById("navbar").innerHTML = navbar();
+}
+
+let places = JSON.parse(localStorage.getItem("places")) || [];
 
 const handleData = (e) => {
     e.preventDefault();
-    let news = {
-        title: document.getElementById("title").value,
-        img: document.getElementById("img").value,
-        description: document.getElementById("description").value,
-        country: document.getElementById("country").value,
-        likes: 0,
-        clicks: 0
+    let product = {
+        title: getValue("title"),
+        img: getValue("img"),
+        package: getValue("pakage"),
+        description: getValue("description"),
+        id: places.length === 0 ? 1 : places[places.length - 1].id + 1
     };
-    News.push(news);
-    localStorage.setItem("News", JSON.stringify(News));
-    document.getElementById("form").reset();
-    alert('News added successfully!');
-  window.location.href="index.html"
-}
+    places.push(product);
+    localStorage.setItem("places", JSON.stringify(places));
+    window.location.href = "/test_7/index.html";
+};
 
-document.getElementById("form").addEventListener("submit", handleData);
+document.getElementById("PlaceData").addEventListener("submit", handleData);

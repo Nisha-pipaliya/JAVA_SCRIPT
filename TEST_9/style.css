@@ -1,72 +1,141 @@
 
+
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
     margin: 0;
 }
 
 .audio-player {
-    background: white;
+    background-color: #425b86;
     border-radius: 10px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
     padding: 20px;
-    width: 300px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .controls {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .control-btn {
     background: none;
     border: none;
     cursor: pointer;
+    margin: 0 10px;
+    width: 50px;
+    height: 50px;
 }
 
 .control-btn img {
-    width: 24px;
-    height: 24px;
+    width: 100%;
+    height: auto;
 }
 
 .timeline {
     width: 100%;
     height: 5px;
     background: #ddd;
-    margin: 10px 0;
-    cursor: pointer;
+    border-radius: 5px;
+    margin: 15px 0;
     position: relative;
 }
 
-.progress {
+.timeline .progress {
     height: 100%;
-    background: #007BFF;
+    background: #007bff;
+    border-radius: 5px;
     width: 0;
 }
 
 .song-info {
-    margin: 10px 0;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.current-song {
+    font-weight: bold;
 }
 
 #songList {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin: 10px 0;
-    text-align: left;
+    margin: 0;
+    width: 100%;
+    overflow-y: auto;
+    max-height: 150px;
 }
 
 #songList li {
-    padding: 5px;
-    cursor: pointer;
+    padding: 10px;
     border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#songList li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 5px;
 }
 
 #songList li:hover {
-    background: #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .audio-player {
+        width: 100%;
+        margin: 10px;
+    }
+    
+    .sidebar {
+        width: 150px;
+    }
 }

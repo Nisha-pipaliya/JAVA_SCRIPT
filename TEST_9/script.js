@@ -1,97 +1,125 @@
 
-document.addEventListener("DOMContentLoaded", function() {
-    const audio = document.getElementById('audio');
-    const playPauseBtn = document.getElementById('playPauseBtn');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const timeline = document.querySelector('.timeline');
-    const progressBar = document.querySelector('.progress');
-    const currentSongDisplay = document.querySelector('.current-song');
-    const songListEl = document.getElementById('songList');
-    const playIcon = document.getElementById('playIcon');
-    const pauseIcon = document.getElementById('pauseIcon');
+const audio = document.getElementById('audio');
+const playPauseBtn = document.getElementById('playPauseBtn');
+const playIcon = document.getElementById('playIcon');
+const pauseIcon = document.getElementById('pauseIcon');
+const songList = document.getElementById('songList');
+const currentSong = document.querySelector('.current-song');
+const progress = document.querySelector('.progress');
+const timeline = document.querySelector('.timeline');
 
-    let isPlaying = false;
-    let currentSongIndex = 0;
+let songs = [
+    {
+        name: "1 swara oza",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://static.vecteezy.com/system/resources/previews/021/693/323/non_2x/a-logo-for-a-music-company-that-is-made-by-song-brand-vector.jpg"
+    },
+    {
+        name: "2 lata mangeshkar",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://t4.ftcdn.net/jpg/04/17/30/01/360_F_417300125_IuLbNIyPcf1WX36Lp2GXQyJ7rwEDvC14.jpg"
+    },
+    {
+        name: "3 lata mangeshkar",
+        src: "https://youtu.be/mXpDd4-7YH0?si=GCPJD2cKiouJpniz",
+        img: "https://img.freepik.com/free-photo/volumetric-musical-background-with-treble-clef-notes-generative-ai_169016-29576.jpg"
+    },
+    {
+        name: "4 swara",
+        src: "https://youtube.com/shorts/XoE8pxWEYLs?si=c7thOsmMms_IgUhz",
+        img: "https://t4.ftcdn.net/jpg/04/17/30/01/360_F_417300125_IuLbNIyPcf1WX36Lp2GXQyJ7rwEDvC14.jpg"
+    },
 
-    const songs = [
-        { title: "Song 1", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
-        { title: "Song 2", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" },
-        { title: "Song 3", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" },
-        { title: "Song 4", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" },
-        { title: "Song 5", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" },
-        { title: "Song 6", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" },
-        { title: "Song 7", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" },
-        { title: "Song 8", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" },
-        { title: "Song 9", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" },
-        { title: "Song 10", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" },
-        { title: "Song 11", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" },
-        { title: "Song 12", src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" }
-    ];
+    {
+        name: "5 darshan raval",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://as2.ftcdn.net/jpg/02/79/86/47/220_F_279864752_EcPSM4PRq6k15ybiJmAUMpKCqLeQPbPT.jpg"
+    },
 
-    const loadSong = (index) => {
-        audio.src = songs[index].src;
-        currentSongDisplay.textContent = songs[index].title;
-        isPlaying = false;
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
-    };
+    {
+        name: "6 saniya mirzza",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://t4.ftcdn.net/jpg/04/17/30/01/360_F_417300125_IuLbNIyPcf1WX36Lp2GXQyJ7rwEDvC14.jpg"
+    },
 
-    const playSong = () => {
+    {
+        name: "7 arigit singh",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://t3.ftcdn.net/jpg/05/51/97/18/360_F_551971815_nXv1fCga04nd9fkjYr0rV0lbu5mG4lHk.jpg"
+    },
+
+    {
+        name: "8 swara",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://img.freepik.com/free-vector/musical-notes-frame-with-text-space_1017-32857.jpg"
+    },
+
+    {
+        name: "9 lata mangeshkar",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+        img: "https://as2.ftcdn.net/jpg/02/79/86/47/220_F_279864752_EcPSM4PRq6k15ybiJmAUMpKCqLeQPbPT.jpg"
+    },
+    // Add more songs here
+];
+
+let currentSongIndex = 0;
+
+const loadSong = (song) => {
+    audio.src = song.src;
+    currentSong.textContent = song.name;
+    document.body.style.backgroundImage = `url(${song.img})`;
+}
+
+const playPauseSong = () => {
+    if (audio.paused) {
         audio.play();
-        isPlaying = true;
         playIcon.style.display = 'none';
         pauseIcon.style.display = 'block';
-    };
-
-    const pauseSong = () => {
+    } else {
         audio.pause();
-        isPlaying = false;
         playIcon.style.display = 'block';
         pauseIcon.style.display = 'none';
-    };
+    }
+}
 
-    playPauseBtn.addEventListener('click', () => {
-        if (isPlaying) {
-            pauseSong();
-        } else {
-            playSong();
-        }
-    });
+const updateProgress = () => {
+    const percentage = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = `${percentage}%`;
+}
 
-    prevBtn.addEventListener('click', () => {
-        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-        loadSong(currentSongIndex);
-        playSong();
-    });
+const setProgress = (e) => {
+    const newTime = (e.offsetX / timeline.offsetWidth) * audio.duration;
+    audio.currentTime = newTime;
+}
 
-    nextBtn.addEventListener('click', () => {
-        currentSongIndex = (currentSongIndex + 1) % songs.length;
-        loadSong(currentSongIndex);
-        playSong();
-    });
+const nextSong = () => {
+    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    loadSong(songs[currentSongIndex]);
+    playPauseSong();
+}
 
-    audio.addEventListener('timeupdate', () => {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressBar.style.width = `${progress}%`;
-    });
+const prevSong = () => {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    loadSong(songs[currentSongIndex]);
+    playPauseSong();
+}
 
-    timeline.addEventListener('click', (e) => {
-        const timelineWidth = timeline.offsetWidth;
-        const timeToSeek = (e.offsetX / timelineWidth) * audio.duration;
-        audio.currentTime = timeToSeek;
-    });
+audio.addEventListener('timeupdate', updateProgress);
+timeline.addEventListener('click', setProgress);
+playPauseBtn.addEventListener('click', playPauseSong);
+document.getElementById('nextBtn').addEventListener('click', nextSong);
+document.getElementById('prevBtn').addEventListener('click', prevSong);
 
-    songs.forEach((song, index) => {
+window.onload = () => {
+    loadSong(songs[currentSongIndex]);
+    songs.forEach(song => {
         const li = document.createElement('li');
-        li.textContent = song.title;
+        li.innerHTML = `<img src="${song.img}" alt="${song.name}"><span>${song.name}</span>`;
         li.addEventListener('click', () => {
-            currentSongIndex = index;
-            loadSong(currentSongIndex);
-            playSong();
+            currentSongIndex = songs.indexOf(song);
+            loadSong(songs[currentSongIndex]);
+            playPauseSong();
         });
-        songListEl.appendChild(li);
+        songList.appendChild(li);
     });
-
-    loadSong(currentSongIndex);
-});
+};

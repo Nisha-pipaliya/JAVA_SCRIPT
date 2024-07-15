@@ -12,19 +12,19 @@
     <div class="container-fluid">
       <div id="navbar">
         <a href="D:\JAVA_SCRIPT\TEST_7\index.html">home</a>
-        <a href="D:\JAVA_SCRIPT\TEST_7\pages\addplace.html">addplace</a>
-        <a href="D:\JAVA_SCRIPT\TEST_7\pages\login.html">login</a>
-        <a href="D:\JAVA_SCRIPT\TEST_7\pages\signup.html">signup</a>
+        <a href="./addplace.html">addplace</a>
+        <a href="./login.html">login</a>
+        <a href="./signup.html">signup</a>
       </div>
         <h2 class="text-center">Add Place</h2>
         <form id="PlaceData">
             <input type="text" class="form-control" id="title" placeholder="Title" required>
             <input type="url" class="form-control" id="img" placeholder="Image URL" required>
-            <input type="number" class="form-control" id="pakage" placeholder="Package Cost" required>
+            <input type="number" class="form-control" id="package" placeholder="Package Cost" required>  <!-- Changed ID to 'package' -->
             <textarea class="form-control" id="description" placeholder="Description" required></textarea>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    <script src="/js/addPlace.js" type="module"></script> 
+    <script src="/js/addPlace.js"></script> 
 </body>
 </html>

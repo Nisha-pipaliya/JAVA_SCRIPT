@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
 }
 
 .container-fluid {
@@ -8,7 +8,7 @@ body {
 }
 
 #navbar {
-    background-color: #343a40;
+    background-color: #343a40; 
     padding: 10px;
     margin-bottom: 20px;
 }
@@ -26,7 +26,7 @@ body {
 
 .btn {
     background-color: #007bff; 
-    color: #ffffff;
+    color: #ffffff; 
     border: none;
     margin-right: 10px;
     transition: background-color 0.3s ease;
@@ -50,6 +50,7 @@ body {
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    width: 45%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -59,14 +60,14 @@ body {
 }
 
 h2 {
-    color: #343a40; 
+    color: #343a40;
 }
 
 .form-control {
     margin-bottom: 10px;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -79,6 +80,8 @@ h2 {
 .fadeIn {
     animation: fadeIn 0.5s ease-in-out;
 }
+
+
 @media (max-width: 768px) {
     #navbar {
         justify-content: center;
@@ -88,3 +91,10 @@ h2 {
         align-items: center;
     }
 }
+
+.img-fluid{
+    height: 200px;
+    margin: auto;
+    width: 200px;
+}
+

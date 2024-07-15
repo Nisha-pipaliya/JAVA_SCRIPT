@@ -3,14 +3,13 @@
 const handleData = (e) => {
     e.preventDefault();
     let user = {
-        username: getValue("username"),
-        email: getValue("email"),
-        password: getValue("password")
+        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
     };
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("isLogin", true);
-    window.location.href = "/TEST_7/pages/login.html";
+    window.location.href = "/pages/login.html";
 };
 
 document.getElementById("signupForm").addEventListener("submit", handleData);
-document.getElementById("navbar").innerHTML = navbar();

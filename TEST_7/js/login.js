@@ -1,15 +1,16 @@
-
-
 const userdetails = JSON.parse(localStorage.getItem("user"));
-
-document.getElementById("navbar").innerHTML = navbar();
 
 const handleData = (e) => {
     e.preventDefault();
+    
     let user = {
-        email: getValue("email"),
-        password: getValue("password")
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
     };
+    
+
+    console.log("User input:", user);
+    console.log("Stored user details:", userdetails);
 
     if (userdetails) {
         if (userdetails.email !== user.email) {
@@ -19,11 +20,12 @@ const handleData = (e) => {
         } else {
             alert("Logged in as: " + user.email);
             localStorage.setItem("isLogin", true);
-            document.getElementById("navbar").innerHTML = navbar("logout", userdetails.username);
+
+            window.location.href = "/index.html";
         }
     } else {
         alert("Please sign up first.");
-        window.location.href = "/TEST_7/pages/signup.html";
+        window.location.href = "/pages/signup.html";
     }
 };
 

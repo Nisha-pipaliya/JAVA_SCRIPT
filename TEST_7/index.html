@@ -5,26 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tourist Website</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="D:\JAVA_SCRIPT\TEST_7\style.css">
+  <link rel="stylesheet" href="./style.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container-fluid">
     <div id="navbar">
         <a href="D:\JAVA_SCRIPT\TEST_7\index.html">home</a>
-        <a href="D:\JAVA_SCRIPT\TEST_7\pages\addplace.html">addplace</a>
-        <a href="D:\JAVA_SCRIPT\TEST_7\pages\login.html">login</a>
-        <a href="D:\JAVA_SCRIPT\TEST_7\pages\signup.html">signup</a>
+        <a href="./pages/addplace.html">addplace</a>
+        <a href="./pages/login.html">login</a>
+        <a href="./pages/signup.html">signup</a>
+        <input type="text" placeholder="search here.." id="search">
     </div>
     <div id="filters">
       <button class="btn btn-info" id="LTH">Price: Low to High</button>
       <button class="btn btn-info" id="HTL">Price: High to Low</button>
-      <button class="btn btn-info" id="like">Sort by Likes</button>
-      <button class="btn btn-info" id="share">Sort by Shares</button>
+      <button class="btn btn-info" id="like">Sorting by Likes</button>
+      <button class="btn btn-info" id="share">Sorting by Shares</button>
     </div>
     <div id="placeList" class="row"></div>
-    
   </div>
-  <script src="/js/script.js" type="module"></script>
+
+  <script src="/js/script.js" ></script>
 </body>
 </html>

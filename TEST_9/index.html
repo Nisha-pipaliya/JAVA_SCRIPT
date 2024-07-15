@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Audio Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="audio-player">
+        <audio id="audio" src=""></audio>
+        <div class="controls">
+            <button id="prevBtn" class="control-btn">
+                <img src="/icon/left.png" alt="Previous">
+            </button>
+            <button id="playPauseBtn" class="control-btn">
+                <img id="playIcon" src="/icon/play.png" alt="Play">
+                <img id="pauseIcon" src="/icon/pause.png" alt="Pause" style="display: none;">
+            </button>
+            <button id="nextBtn" class="control-btn">
+                <img src="/icon/next.png" alt="Next">
+            </button>
+        </div>
+        <div class="timeline">
+            <div class="progress"></div>
+        </div>
+        <div class="song-info">
+            <span class="current-song">No song playing</span>
+        </div>
+        <ul id="songList">
+           
+        </ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+

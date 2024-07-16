@@ -1,125 +1,258 @@
+function createTrackItem(index,name,duration){
+    var trackItem = document.createElement('div');
+    trackItem.setAttribute("class", "playlist-track-ctn");
+    trackItem.setAttribute("id", "ptc-"+index);
+    trackItem.setAttribute("data-index", index);
+    document.querySelector(".playlist-ctn").appendChild(trackItem);
 
-const audio = document.getElementById('audio');
-const playPauseBtn = document.getElementById('playPauseBtn');
-const playIcon = document.getElementById('playIcon');
-const pauseIcon = document.getElementById('pauseIcon');
-const songList = document.getElementById('songList');
-const currentSong = document.querySelector('.current-song');
-const progress = document.querySelector('.progress');
-const timeline = document.querySelector('.timeline');
+    var playBtnItem = document.createElement('div');
+    playBtnItem.setAttribute("class", "playlist-btn-play");
+    playBtnItem.setAttribute("id", "pbp-"+index);
+    document.querySelector("#ptc-"+index).appendChild(playBtnItem);
 
-let songs = [
+    var btnImg = document.createElement('i');
+    btnImg.setAttribute("class", "fas fa-play");
+    btnImg.setAttribute("height", "40");
+    btnImg.setAttribute("width", "40");
+    btnImg.setAttribute("id", "p-img-"+index);
+    document.querySelector("#pbp-"+index).appendChild(btnImg);
+
+    var trackInfoItem = document.createElement('div');
+    trackInfoItem.setAttribute("class", "playlist-info-track");
+    trackInfoItem.innerHTML = name
+    document.querySelector("#ptc-"+index).appendChild(trackInfoItem);
+
+    var trackDurationItem = document.createElement('div');
+    trackDurationItem.setAttribute("class", "playlist-duration");
+    trackDurationItem.innerHTML = duration
+    document.querySelector("#ptc-"+index).appendChild(trackDurationItem);
+  }
+
+  var listAudio = [
     {
-        name: "1 swara oza",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://static.vecteezy.com/system/resources/previews/021/693/323/non_2x/a-logo-for-a-music-company-that-is-made-by-song-brand-vector.jpg"
+      name:"swara",
+      file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+      duration:"08:47"
     },
     {
-        name: "2 lata mangeshkar",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://t4.ftcdn.net/jpg/04/17/30/01/360_F_417300125_IuLbNIyPcf1WX36Lp2GXQyJ7rwEDvC14.jpg"
+      name:"saniya mirzza",
+      file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+      duration:"05:53"
     },
     {
-        name: "3 lata mangeshkar",
-        src: "https://youtu.be/mXpDd4-7YH0?si=GCPJD2cKiouJpniz",
-        img: "https://img.freepik.com/free-photo/volumetric-musical-background-with-treble-clef-notes-generative-ai_169016-29576.jpg"
+      name:"darshan raval",
+      file:"https://soundcloud.com/user-779815173/darren-styles-i-defqon-1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      duration:"00:27"
     },
     {
-        name: "4 swara",
-        src: "https://youtube.com/shorts/XoE8pxWEYLs?si=c7thOsmMms_IgUhz",
-        img: "https://t4.ftcdn.net/jpg/04/17/30/01/360_F_417300125_IuLbNIyPcf1WX36Lp2GXQyJ7rwEDvC14.jpg"
-    },
+        name:"lata mangeshkar",
+        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+        duration:"00:27"
+     },
+     {
+        name:"swara",
+        file:"https://soundcloud.com/oneseventy/rhythmics-xtasea-guardian?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+        duration:"00:28"
+      },
+      {
+        name:"saniya mirzza",
+        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+        duration:"05:53"
+      },
+      {
+        name:"ariz mirzaa",
+        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+        duration:"05:53"
+      },
+      {
+        name:"krishiv issballe",
+        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+        duration:"05:53"
+      },
 
-    {
-        name: "5 darshan raval",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://as2.ftcdn.net/jpg/02/79/86/47/220_F_279864752_EcPSM4PRq6k15ybiJmAUMpKCqLeQPbPT.jpg"
-    },
+  ]
 
-    {
-        name: "6 saniya mirzza",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://t4.ftcdn.net/jpg/04/17/30/01/360_F_417300125_IuLbNIyPcf1WX36Lp2GXQyJ7rwEDvC14.jpg"
-    },
+  for (var i = 0; i < listAudio.length; i++) {
+      createTrackItem(i,listAudio[i].name,listAudio[i].duration);
+  }
+  var indexAudio = 0;
 
-    {
-        name: "7 arigit singh",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://t3.ftcdn.net/jpg/05/51/97/18/360_F_551971815_nXv1fCga04nd9fkjYr0rV0lbu5mG4lHk.jpg"
-    },
+  const loadNewTrack=(index)=>{
+    var player = document.querySelector('#source-audio')
+    player.src = listAudio[index].file
+    document.querySelector('.title').innerHTML = listAudio[index].name
+    this.currentAudio = document.getElementById("myAudio");
+    this.currentAudio.load()
+    this.toggleAudio()
+    this.updateStylePlaylist(this.indexAudio,index)
+    this.indexAudio = index;
+  }
 
-    {
-        name: "8 swara",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://img.freepik.com/free-vector/musical-notes-frame-with-text-space_1017-32857.jpg"
-    },
+  var playListItems = document.querySelectorAll(".playlist-track-ctn");
 
-    {
-        name: "9 lata mangeshkar",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-        img: "https://as2.ftcdn.net/jpg/02/79/86/47/220_F_279864752_EcPSM4PRq6k15ybiJmAUMpKCqLeQPbPT.jpg"
-    },
-    // Add more songs here
-];
+  for (let i = 0; i < playListItems.length; i++){
+    playListItems[i].addEventListener("click", getClickedElement.bind(this));
+  }
 
-let currentSongIndex = 0;
-
-const loadSong = (song) => {
-    audio.src = song.src;
-    currentSong.textContent = song.name;
-    document.body.style.backgroundImage = `url(${song.img})`;
-}
-
-const playPauseSong = () => {
-    if (audio.paused) {
-        audio.play();
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
-    } else {
-        audio.pause();
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
+  function getClickedElement(event) {
+    for (let i = 0; i < playListItems.length; i++){
+      if(playListItems[i] == event.target){
+        var clickedIndex = event.target.getAttribute("data-index")
+        if (clickedIndex == this.indexAudio ) {
+            this.toggleAudio()
+        }else{
+            loadNewTrack(clickedIndex);
+        }
+      }
     }
-}
+  }
 
-const updateProgress = () => {
-    const percentage = (audio.currentTime / audio.duration) * 100;
-    progress.style.width = `${percentage}%`;
-}
+  document.querySelector('#source-audio').src = listAudio[indexAudio].file
+  document.querySelector('.title').innerHTML = listAudio[indexAudio].name
 
-const setProgress = (e) => {
-    const newTime = (e.offsetX / timeline.offsetWidth) * audio.duration;
-    audio.currentTime = newTime;
-}
 
-const nextSong = () => {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
-    loadSong(songs[currentSongIndex]);
-    playPauseSong();
-}
+  var currentAudio = document.getElementById("myAudio");
 
-const prevSong = () => {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-    loadSong(songs[currentSongIndex]);
-    playPauseSong();
-}
+  currentAudio.load()
+  
+  currentAudio.onloadedmetadata = function() {
+        document.getElementsByClassName('duration')[0].innerHTML = this.getMinutes(this.currentAudio.duration)
+  }.bind(this);
 
-audio.addEventListener('timeupdate', updateProgress);
-timeline.addEventListener('click', setProgress);
-playPauseBtn.addEventListener('click', playPauseSong);
-document.getElementById('nextBtn').addEventListener('click', nextSong);
-document.getElementById('prevBtn').addEventListener('click', prevSong);
+  var interval1;
 
-window.onload = () => {
-    loadSong(songs[currentSongIndex]);
-    songs.forEach(song => {
-        const li = document.createElement('li');
-        li.innerHTML = `<img src="${song.img}" alt="${song.name}"><span>${song.name}</span>`;
-        li.addEventListener('click', () => {
-            currentSongIndex = songs.indexOf(song);
-            loadSong(songs[currentSongIndex]);
-            playPauseSong();
-        });
-        songList.appendChild(li);
-    });
-};
+  function toggleAudio() {
+
+    if (this.currentAudio.paused) {
+      document.querySelector('#icon-play').style.display = 'none';
+      document.querySelector('#icon-pause').style.display = 'block';
+      document.querySelector('#ptc-'+this.indexAudio).classList.add("active-track");
+      this.playToPause(this.indexAudio)
+      this.currentAudio.play();
+    }else{
+      document.querySelector('#icon-play').style.display = 'block';
+      document.querySelector('#icon-pause').style.display = 'none';
+      this.pauseToPlay(this.indexAudio)
+      this.currentAudio.pause();
+    }
+  }
+
+  function pauseAudio() {
+    this.currentAudio.pause();
+    clearInterval(interval1);
+  }
+
+  var timer = document.getElementsByClassName('timer')[0]
+
+  var barProgress = document.getElementById("myBar");
+
+
+  var width = 0;
+
+  function onTimeUpdate() {
+    var t = this.currentAudio.currentTime
+    timer.innerHTML = this.getMinutes(t);
+    this.setBarProgress();
+    if (this.currentAudio.ended) {
+      document.querySelector('#icon-play').style.display = 'block';
+      document.querySelector('#icon-pause').style.display = 'none';
+      this.pauseToPlay(this.indexAudio)
+      if (this.indexAudio < listAudio.length-1) {
+          var index = parseInt(this.indexAudio)+1
+          this.loadNewTrack(index)
+      }
+    }
+  }
+
+
+  function setBarProgress(){
+    var progress = (this.currentAudio.currentTime/this.currentAudio.duration)*100;
+    document.getElementById("myBar").style.width = progress + "%";
+  }
+
+
+  function getMinutes(t){
+    var min = parseInt(parseInt(t)/60);
+    var sec = parseInt(t%60);
+    if (sec < 10) {
+      sec = "0"+sec
+    }
+    if (min < 10) {
+      min = "0"+min
+    }
+    return min+":"+sec
+  }
+
+  var progressbar = document.querySelector('#myProgress')
+  progressbar.addEventListener("click", seek.bind(this));
+
+
+  function seek(event) {
+    var percent = event.offsetX / progressbar.offsetWidth;
+    this.currentAudio.currentTime = percent * this.currentAudio.duration;
+    barProgress.style.width = percent*100 + "%";
+  }
+
+  function forward(){
+    this.currentAudio.currentTime = this.currentAudio.currentTime + 5
+    this.setBarProgress();
+  }
+
+  function rewind(){
+    this.currentAudio.currentTime = this.currentAudio.currentTime - 5
+    this.setBarProgress();
+  }
+
+
+  function next(){
+    if (this.indexAudio <listAudio.length-1) {
+        var oldIndex = this.indexAudio
+        this.indexAudio++;
+        updateStylePlaylist(oldIndex,this.indexAudio)
+        this.loadNewTrack(this.indexAudio);
+    }
+  }
+
+  function previous(){
+    if (this.indexAudio>0) {
+        var oldIndex = this.indexAudio
+        this.indexAudio--;
+        updateStylePlaylist(oldIndex,this.indexAudio)
+        this.loadNewTrack(this.indexAudio);
+    }
+  }
+
+  function updateStylePlaylist(oldIndex,newIndex){
+    document.querySelector('#ptc-'+oldIndex).classList.remove("active-track");
+    this.pauseToPlay(oldIndex);
+    document.querySelector('#ptc-'+newIndex).classList.add("active-track");
+    this.playToPause(newIndex)
+  }
+
+  function playToPause(index){
+    var ele = document.querySelector('#p-img-'+index)
+    ele.classList.remove("fa-play");
+    ele.classList.add("fa-pause");
+  }
+
+  function pauseToPlay(index){
+    var ele = document.querySelector('#p-img-'+index)
+    ele.classList.remove("fa-pause");
+    ele.classList.add("fa-play");
+  }
+
+
+  function toggleMute(){
+    var btnMute = document.querySelector('#toggleMute');
+    var volUp = document.querySelector('#icon-vol-up');
+    var volMute = document.querySelector('#icon-vol-mute');
+    if (this.currentAudio.muted == false) {
+       this.currentAudio.muted = true
+       volUp.style.display = "none"
+       volMute.style.display = "block"
+    }else{
+      this.currentAudio.muted = false
+      volMute.style.display = "none"
+      volUp.style.display = "block"
+    }
+  }

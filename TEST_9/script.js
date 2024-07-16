@@ -1,258 +1,178 @@
-function createTrackItem(index,name,duration){
-    var trackItem = document.createElement('div');
-    trackItem.setAttribute("class", "playlist-track-ctn");
-    trackItem.setAttribute("id", "ptc-"+index);
-    trackItem.setAttribute("data-index", index);
-    document.querySelector(".playlist-ctn").appendChild(trackItem);
-
-    var playBtnItem = document.createElement('div');
-    playBtnItem.setAttribute("class", "playlist-btn-play");
-    playBtnItem.setAttribute("id", "pbp-"+index);
-    document.querySelector("#ptc-"+index).appendChild(playBtnItem);
-
-    var btnImg = document.createElement('i');
-    btnImg.setAttribute("class", "fas fa-play");
-    btnImg.setAttribute("height", "40");
-    btnImg.setAttribute("width", "40");
-    btnImg.setAttribute("id", "p-img-"+index);
-    document.querySelector("#pbp-"+index).appendChild(btnImg);
-
-    var trackInfoItem = document.createElement('div');
-    trackInfoItem.setAttribute("class", "playlist-info-track");
-    trackInfoItem.innerHTML = name
-    document.querySelector("#ptc-"+index).appendChild(trackInfoItem);
-
-    var trackDurationItem = document.createElement('div');
-    trackDurationItem.setAttribute("class", "playlist-duration");
-    trackDurationItem.innerHTML = duration
-    document.querySelector("#ptc-"+index).appendChild(trackDurationItem);
-  }
-
-  var listAudio = [
-    {
-      name:"swara",
-      file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-      duration:"08:47"
+const playerUid1 = new FdkPlayerJs({
+  player: document.querySelector(".fdk-audio-player[data-audio-player-uid='1']")
+}, {
+  audioTracks: [{
+    title: "gruhhu",
+    titleSub: "johhnss",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13426/13426344_ledi_seks.mp3",
+    fileImage: "https://globalshow.ru/files/gallery/800/big/7580_bff41zakazat_saksofo_1571910160.jpg"
+  }, {
+    title: "gyzii",
+    titleSub: "ruhhm",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13433/13433861_ogon_lyubviduduk.mp3",
+    fileImage: "https://muzline.ua/image/catalog/articles/duhovie-instrumenti/fleyti/sem-prichin-igrat-na-fleyte/7-prichin-pochemy-stoit-igrat-na-fleyte-1.jpg"
+  }, {
+    title: "swara",
+    titleSub: "swaraa",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13431/13431570_magic_dydyk.mp3",
+    fileImage: "https://radiovan.fm/redactor/60e657820bfa5.jpg"
+  }, {
+    title: "Myth",
+    titleSub: "The interception",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13429/13429724_inceptiontristeria.mp3",
+    fileImage: "https://media.ticketmaster.co.uk/tm/en-gb/dbimages/27178a.jpg"
+  }, {
+    title: "MESSIAH project",
+    titleSub: "My Love (Part 2)",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13433/13433540_andrey_moldonlyubov.mp3",
+    fileImage: "https://o2label.ru/data/muzcat/covers/05-009.jpg"
+  }, {
+    title: "Mood Altosax Deluxe",
+    titleSub: "For the most favourite",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13433/13433547_saksofonmood_altosax_deluxe__midnight_fantasy_cd_1.mp3",
+    fileImage: "https://c-fa.cdn.smule.com/rs-s-ash-3/sing_google/performance/cover/1c/e3/2d7a1f65-6c98-42f0-88af-a14c296c388b.jpg"
+  }, {
+    title: "Chris Spheeris",
+    titleSub: "Eros",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13433/13433598_eros.mp3",
+    fileImage: "https://pesni.life/pic/6/63/66399.400x400.jpg"
+  }, {
+    title: "Amure",
+    titleSub: "Last Train",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/0//5899/5899665_amure__last_train.mp3",
+    fileImage: "https://i1.sndcdn.com/artworks-000641138191-dp8vht-t500x500.jpg"
+  }, {
+    title: "gohhbajjj",
+    titleSub: "Magnetik Fields",
+    fileAudio: "https://img1.liveinternet.ru/images/attach/d/3//13433/13433922_zhan_mishel_zharrmagnetik.mp3",
+    fileImage: "https://img1.liveinternet.ru/images/attach/d/3/158/4/158004085_ZHanMishel_ZHarr.jpg"
+  }, {
+    title: "Amure",
+    titleSub: "Vespera",
+    fileAudio: "https://img1.liveinternet.ru/images/attach/d/3//13433/13433930_amurevespera.mp3",
+    fileImage: "https://img1.liveinternet.ru/images/attach/d/3/158/4/158004121_Amure.jpg"
+  }, {
+    title: "Soul Ballet",
+    titleSub: "Exotiqe",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434214_soul_ballet__exotique__maximp3.mp3",
+    fileImage: "https://img1.liveinternet.ru/images/attach/d/3/158/18/158018201_Soul_Ballet.jpg"
+  }, {
+    title: "Весенняя",
+    titleSub: "youhh cahnan",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434212_13386768_waldemarairichvesennyayamishelle_muzofon.mp3",
+    fileImage: "https://img1.liveinternet.ru/images/attach/d/3/158/18/158018211_RRRSRRRRS_RRSRyoS.jpg"
+  }, {
+    title: "Sekret World",
+    titleSub: "Enya",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434213_enyasekret_world.mp3",
+    fileImage: "https://img0.liveinternet.ru/images/attach/d/3/158/18/158018210_Enya.jpg"
+  }, {
+    title: "If You Were Here Tonight",
+    titleSub: "Steen Thottrup",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434215_steen_t_if_you_were_here_tonight.mp3",
+    fileImage: "https://img0.liveinternet.ru/images/attach/d/3/158/18/158018212_Steen_Thottrup.jpg"
+  }, {
+    title: "aurora borealis",
+    titleSub: "Yakuro",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434591_yakuroaurora_borealis.mp3",
+    fileImage: "https://p1.music.126.net/2WIuOtr5eywV_OXLwJbbRw==/3442570916179149.jpg"
+  }, {
+    title: "creative_powerful_througts",
+    titleSub: "stella_christina_fuerpass",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/0//5794/5794527_stella_christina_fuerpass_frei__01_creative_powerful_througts.mp3",
+    fileImage: "https://shuraonline.ru/assets/files/2015/08/148640.jpg"
+  }, {
+    title: "desert_of_sandess",
+    titleSub: "DJ Dado",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434604_desert_of_sandess.mp3",
+    fileImage: "https://i1.sndcdn.com/artworks-000612133444-x8a4mm-t500x500.jpg"
+  }, {
+    title: "shelly",
+    titleSub: "admARKANNN",
+    fileAudio: "https://img0.liveinternet.ru/images/attach/d/3//13434/13434605_trek10fleyta.mp3",
+    fileImage: "https://tanci-kavkaza.ru/wp-content/uploads/2017/02/igra-na-duduke.jpg"
+  }, {
+    title: "fantastic_endless_horizons",
+    titleSub: "stella_christina_fuerpass",
+    fileAudio: "//img0.liveinternet.ru/images/attach/d/0//5794/5794528_stella_christina_fuerpass_frei__fantastic_endless_horizons_muzofon.mp3",
+    fileImage: "https://scd-grande.ru/uploads/images/p/e/r/peruanskie_indejtsi_etno.jpg"
+  }, {
+    title: "Magic sound",
+    titleSub: "Amure",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13435/13435401_amuremagic_sound.mp3",
+    fileImage: "https://img0.liveinternet.ru/images/attach/d/3/158/106/158106062_Amure.jpg"
+  }, {
+    title: "Shadows In Silence",
+    titleSub: "Enigma",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13435/13435402_shadows_in_silence.mp3",
+    fileImage: "https://img0.liveinternet.ru/images/attach/d/3/158/106/158106078_enigma.jpg"
+  }, {
+    title: "Tango in the sky",
+    titleSub: "Amure",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13435/13435403_amuretango_in_the_sky.mp3",
+    fileImage: "https://img1.liveinternet.ru/images/attach/d/3/158/106/158106079_RRSSR3.jpg"
+  }, {
+    title: "Concerto Pour Une Voix (S.Preux)",
+    titleSub: "Saint-Preux",
+    fileAudio: "//img1.liveinternet.ru/images/attach/d/3//13435/13435408_concerto_pour_une_voix__s.mp3",
+    fileImage: "https://img1.liveinternet.ru/images/attach/d/3/158/106/158106211_Concerto_Pour_Une_Voix__SPreux_.jpg"
+  }, {
+    title: "BULLETT;;S ",
+    titleSub: "CAHRRAMS",
+    fileAudio: "https://img1.liveinternet.ru/images/attach/d/3//13435/13435409_romanze_aus_die_perlenfischeredward_simoni.mp3",
+    fileImage: "//img1.liveinternet.ru/images/attach/d/3/158/106/158106437_YEdvard_Simone.jpg"
+  }],
+  bgc: "#00ccff3c",
+  bgColorOverBg: "#00ccff58",
+  playlist: {
+    loop: true,
+    items: {
+      bgc: "#5bec7b93",
+      bgch: "#0977219a"
     },
-    {
-      name:"saniya mirzza",
-      file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-      duration:"05:53"
+    scrollbar: {
+      bgc: "#ff004dff"
+    }
+  },
+  buttons: {
+    shuffle: {
+      bgca: "#00ff7cff"
     },
-    {
-      name:"darshan raval",
-      file:"https://soundcloud.com/user-779815173/darren-styles-i-defqon-1?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-      duration:"00:27"
+    prev: {
+      bgc: "#00ccffff"
     },
-    {
-        name:"lata mangeshkar",
-        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
-        duration:"00:27"
-     },
-     {
-        name:"swara",
-        file:"https://soundcloud.com/oneseventy/rhythmics-xtasea-guardian?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
-        duration:"00:28"
-      },
-      {
-        name:"saniya mirzza",
-        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-        duration:"05:53"
-      },
-      {
-        name:"ariz mirzaa",
-        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-        duration:"05:53"
-      },
-      {
-        name:"krishiv issballe",
-        file:"https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
-        duration:"05:53"
-      },
-
-  ]
-
-  for (var i = 0; i < listAudio.length; i++) {
-      createTrackItem(i,listAudio[i].name,listAudio[i].duration);
-  }
-  var indexAudio = 0;
-
-  const loadNewTrack=(index)=>{
-    var player = document.querySelector('#source-audio')
-    player.src = listAudio[index].file
-    document.querySelector('.title').innerHTML = listAudio[index].name
-    this.currentAudio = document.getElementById("myAudio");
-    this.currentAudio.load()
-    this.toggleAudio()
-    this.updateStylePlaylist(this.indexAudio,index)
-    this.indexAudio = index;
-  }
-
-  var playListItems = document.querySelectorAll(".playlist-track-ctn");
-
-  for (let i = 0; i < playListItems.length; i++){
-    playListItems[i].addEventListener("click", getClickedElement.bind(this));
-  }
-
-  function getClickedElement(event) {
-    for (let i = 0; i < playListItems.length; i++){
-      if(playListItems[i] == event.target){
-        var clickedIndex = event.target.getAttribute("data-index")
-        if (clickedIndex == this.indexAudio ) {
-            this.toggleAudio()
-        }else{
-            loadNewTrack(clickedIndex);
-        }
-      }
+    next: {
+      bgc: "#00ccffff"
+    },
+    play: {
+      bgc: "#00ccffff"
+    }
+  },
+  headers: {
+    author: {
+      colorText: "#1e1bdff7",
+      bgc: "#00ccff06"
+    },
+    song: {
+      colorText: "#1e1bdff7",
+      bgc: "#00ccff06"
+    }
+  },
+  trackbars: {
+    volume: {
+      bgc: "#ff0043ff",
+      fgc: "#0ecd39ff",
+      height: 5,
+      textColor: "#00ccffff",
+      circleColor: "#00ccffff"
+    },
+    song: {
+      fgc: "#ff004ef9",
+      height: 5,
+      textColor: "#fc00ffff",
+      circleColor: "#003affff",
+      circleSize: 10,
+      circleSizeHover: 5
     }
   }
-
-  document.querySelector('#source-audio').src = listAudio[indexAudio].file
-  document.querySelector('.title').innerHTML = listAudio[indexAudio].name
-
-
-  var currentAudio = document.getElementById("myAudio");
-
-  currentAudio.load()
-  
-  currentAudio.onloadedmetadata = function() {
-        document.getElementsByClassName('duration')[0].innerHTML = this.getMinutes(this.currentAudio.duration)
-  }.bind(this);
-
-  var interval1;
-
-  function toggleAudio() {
-
-    if (this.currentAudio.paused) {
-      document.querySelector('#icon-play').style.display = 'none';
-      document.querySelector('#icon-pause').style.display = 'block';
-      document.querySelector('#ptc-'+this.indexAudio).classList.add("active-track");
-      this.playToPause(this.indexAudio)
-      this.currentAudio.play();
-    }else{
-      document.querySelector('#icon-play').style.display = 'block';
-      document.querySelector('#icon-pause').style.display = 'none';
-      this.pauseToPlay(this.indexAudio)
-      this.currentAudio.pause();
-    }
-  }
-
-  function pauseAudio() {
-    this.currentAudio.pause();
-    clearInterval(interval1);
-  }
-
-  var timer = document.getElementsByClassName('timer')[0]
-
-  var barProgress = document.getElementById("myBar");
-
-
-  var width = 0;
-
-  function onTimeUpdate() {
-    var t = this.currentAudio.currentTime
-    timer.innerHTML = this.getMinutes(t);
-    this.setBarProgress();
-    if (this.currentAudio.ended) {
-      document.querySelector('#icon-play').style.display = 'block';
-      document.querySelector('#icon-pause').style.display = 'none';
-      this.pauseToPlay(this.indexAudio)
-      if (this.indexAudio < listAudio.length-1) {
-          var index = parseInt(this.indexAudio)+1
-          this.loadNewTrack(index)
-      }
-    }
-  }
-
-
-  function setBarProgress(){
-    var progress = (this.currentAudio.currentTime/this.currentAudio.duration)*100;
-    document.getElementById("myBar").style.width = progress + "%";
-  }
-
-
-  function getMinutes(t){
-    var min = parseInt(parseInt(t)/60);
-    var sec = parseInt(t%60);
-    if (sec < 10) {
-      sec = "0"+sec
-    }
-    if (min < 10) {
-      min = "0"+min
-    }
-    return min+":"+sec
-  }
-
-  var progressbar = document.querySelector('#myProgress')
-  progressbar.addEventListener("click", seek.bind(this));
-
-
-  function seek(event) {
-    var percent = event.offsetX / progressbar.offsetWidth;
-    this.currentAudio.currentTime = percent * this.currentAudio.duration;
-    barProgress.style.width = percent*100 + "%";
-  }
-
-  function forward(){
-    this.currentAudio.currentTime = this.currentAudio.currentTime + 5
-    this.setBarProgress();
-  }
-
-  function rewind(){
-    this.currentAudio.currentTime = this.currentAudio.currentTime - 5
-    this.setBarProgress();
-  }
-
-
-  function next(){
-    if (this.indexAudio <listAudio.length-1) {
-        var oldIndex = this.indexAudio
-        this.indexAudio++;
-        updateStylePlaylist(oldIndex,this.indexAudio)
-        this.loadNewTrack(this.indexAudio);
-    }
-  }
-
-  function previous(){
-    if (this.indexAudio>0) {
-        var oldIndex = this.indexAudio
-        this.indexAudio--;
-        updateStylePlaylist(oldIndex,this.indexAudio)
-        this.loadNewTrack(this.indexAudio);
-    }
-  }
-
-  function updateStylePlaylist(oldIndex,newIndex){
-    document.querySelector('#ptc-'+oldIndex).classList.remove("active-track");
-    this.pauseToPlay(oldIndex);
-    document.querySelector('#ptc-'+newIndex).classList.add("active-track");
-    this.playToPause(newIndex)
-  }
-
-  function playToPause(index){
-    var ele = document.querySelector('#p-img-'+index)
-    ele.classList.remove("fa-play");
-    ele.classList.add("fa-pause");
-  }
-
-  function pauseToPlay(index){
-    var ele = document.querySelector('#p-img-'+index)
-    ele.classList.remove("fa-pause");
-    ele.classList.add("fa-play");
-  }
-
-
-  function toggleMute(){
-    var btnMute = document.querySelector('#toggleMute');
-    var volUp = document.querySelector('#icon-vol-up');
-    var volMute = document.querySelector('#icon-vol-mute');
-    if (this.currentAudio.muted == false) {
-       this.currentAudio.muted = true
-       volUp.style.display = "none"
-       volMute.style.display = "block"
-    }else{
-      this.currentAudio.muted = false
-      volMute.style.display = "none"
-      volUp.style.display = "block"
-    }
-  }
+});

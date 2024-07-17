@@ -21,7 +21,7 @@ const handleData = (e) => {
     };
     places.push(product);
     localStorage.setItem("places", JSON.stringify(places));
-    window.location.href = "TEST_7/index.html";
+    window.location.href = "/index.html";
 };
 
 document.getElementById("PlaceData").addEventListener("submit", handleData);

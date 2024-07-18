@@ -2,7 +2,7 @@ let isLogin = localStorage.getItem("isLogin") || false;
 let userdetails = JSON.parse(localStorage.getItem("user"));
 
 if (!isLogin) {
-    window.location.href = "/pages/signup.html"; 
+    window.location.href = "/signup.html"; 
 }
 
 let places = JSON.parse(localStorage.getItem("places")) || [];

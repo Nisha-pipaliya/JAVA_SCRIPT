@@ -9,7 +9,7 @@ const handleData = (e) => {
     };
     localStorage.setItem("user", JSON.stringify(user));
     localStorage.setItem("isLogin", true);
-    window.location.href = "/pages/login.html";
+    window.location.href = "/login.html";
 };
 
 document.getElementById("signupForm").addEventListener("submit", handleData);

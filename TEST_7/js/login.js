@@ -25,7 +25,7 @@ const handleData = (e) => {
         }
     } else {
         alert("Please sign up first.");
-        window.location.href = "/pages/signup.html";
+        window.location.href = "/signup.html";
     }
 };
 

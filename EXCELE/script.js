@@ -1,4 +1,4 @@
-function doPost(e) {
+const doPost=(e)=>{
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('formexcel'); // Change 'Sheet1' if your sheet name is different
     const data = JSON.parse(e.postData.contents);
   

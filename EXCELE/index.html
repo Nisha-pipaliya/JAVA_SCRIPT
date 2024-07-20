@@ -46,7 +46,7 @@
     </div>
 
     <script>
-        const scriptURL = 'YOUR_DEPLOYED_SCRIPT_URL'; // Replace with your actual deployed script URL
+        const scriptURL = 'https://nisha-pipaliya.github.io/JAVA_SCRIPT/EXCELE/index.html'; // Replace with your actual deployed script URL
         const form = document.forms['google-sheet'];
 
         form.addEventListener('submit', e => {
@@ -58,7 +58,7 @@
                 .catch(error => console.error('Error!', error.message));
         });
 
-        function calculate() {
+        const calculate=() =>{
             const sub1 = parseFloat(document.getElementById('sub1').value) || 0;
             const sub2 = parseFloat(document.getElementById('sub2').value) || 0;
             const sub3 = parseFloat(document.getElementById('sub3').value) || 0;

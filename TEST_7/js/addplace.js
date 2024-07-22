@@ -23,5 +23,4 @@ const handleData = (e) => {
     localStorage.setItem("places", JSON.stringify(places));
     window.location.href = "/index.html";
 };
-
 document.getElementById("PlaceData").addEventListener("submit", handleData);

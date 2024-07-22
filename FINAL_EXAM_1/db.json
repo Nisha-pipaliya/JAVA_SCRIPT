@@ -1,0 +1,110 @@
+{
+    "foods": [
+      {
+        "name": "Pizza",
+        "category": "Main Course",
+        "calories": 250,
+        "ingredients": ["Dough", "Tomato Sauce", "Cheese"],
+        "price": 10.99
+      },
+      {
+        "name": "Burger",
+        "category": "Main Course",
+        "calories": 350,
+        "ingredients": ["Bun", "Beef Patty", "Lettuce", "Tomato", "Cheese"],
+        "price": 8.99
+      },
+      {
+        "name": "Salad",
+        "category": "Appetizer",
+        "calories": 150,
+        "ingredients": ["Lettuce", "Tomato", "Cucumber", "Olives", "Feta Cheese"],
+        "price": 6.99
+      },
+      {
+        "name": "Pasta",
+        "category": "Main Course",
+        "calories": 400,
+        "ingredients": ["Pasta", "Tomato Sauce", "Garlic", "Basil", "Parmesan"],
+        "price": 12.99
+      },
+      {
+        "name": "Ice Cream",
+        "category": "Dessert",
+        "calories": 200,
+        "ingredients": ["Milk", "Sugar", "Cream", "Vanilla"],
+        "price": 4.99
+      },
+      {
+        "name": "Sushi",
+        "category": "Main Course",
+        "calories": 300,
+        "ingredients": ["Rice", "Seaweed", "Fish", "Soy Sauce"],
+        "price": 14.99
+      },
+      {
+        "name": "Tacos",
+        "category": "Main Course",
+        "calories": 250,
+        "ingredients": ["Tortilla", "Beef", "Lettuce", "Cheese", "Salsa"],
+        "price": 9.99
+      },
+      {
+        "name": "Soup",
+        "category": "Appetizer",
+        "calories": 100,
+        "ingredients": ["Broth", "Vegetables", "Salt", "Pepper"],
+        "price": 5.99
+      },
+      {
+        "name": "Steak",
+        "category": "Main Course",
+        "calories": 450,
+        "ingredients": ["Beef", "Salt", "Pepper", "Garlic"],
+        "price": 19.99
+      },
+      {
+        "name": "Fries",
+        "category": "Side",
+        "calories": 300,
+        "ingredients": ["Potatoes", "Salt", "Oil"],
+        "price": 3.99
+      },
+      {
+        "name": "Smoothie",
+        "category": "Drink",
+        "calories": 150,
+        "ingredients": ["Fruit", "Yogurt", "Honey"],
+        "price": 5.99
+      },
+      {
+        "name": "Pancakes",
+        "category": "Breakfast",
+        "calories": 350,
+        "ingredients": ["Flour", "Milk", "Eggs", "Syrup"],
+        "price": 7.99
+      },
+      {
+        "name": "Grilled Cheese",
+        "category": "Snack",
+        "calories": 400,
+        "ingredients": ["Bread", "Butter", "Cheese"],
+        "price": 4.99
+      },
+      {
+        "name": "Chicken Wings",
+        "category": "Appetizer",
+        "calories": 250,
+        "ingredients": ["Chicken", "Spices", "Sauce"],
+        "price": 8.99
+      },
+      {
+        "name": "Brownie",
+        "category": "Dessert",
+        "calories": 300,
+        "ingredients": ["Chocolate", "Butter", "Sugar", "Flour"],
+        "price": 3.99
+      }
+    ]
+  }
+  

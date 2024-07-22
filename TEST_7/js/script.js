@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let places = JSON.parse(localStorage.getItem("places")) || [];
 
-    const handlePlacesData = (data) => {
+        const handlePlacesData = (data) => {
         let placeList = document.getElementById("placeList");
         placeList.innerHTML = "";
 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     handlePlacesData(places);
 
-    // Search 
+    // --------Search 
     const handleSearch = (value) => {
         let temp = places.filter((place) => place.title.toLowerCase().includes(value.toLowerCase()));
         handlePlacesData(temp);

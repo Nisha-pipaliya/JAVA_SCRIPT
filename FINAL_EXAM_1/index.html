@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Corner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/index.html">home</a>
+    <a href="/pages/addCart.html">add cart</a>
+    <button><a href="/pages/signup.html">signup</a></button>
+    <button><a href="/pages/login.html">login</a></button>
+    
+    <input type="text" id="search" placeholder="Search...">
+    <select id="category-filter">
+        <option value="">All Categories</option>
+        <option value="Main Course">Main Course</option>
+        <option value="Appetizer">Appetizer</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Side">Side</option>
+        <option value="Drink">Drink</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Snack">Snack</option>
+    </select>
+    <select id="sort-by">
+        <option value="">Sort By</option>
+        <option value="price-asc">Price :(Low to High)</option>
+        <option value="price-desc">Price: (High to Low)</option>
+    </select>
+
+    <h1>Food List</h1>
+    <div id="food-list"></div>
+
+    <script src="/js/food_data.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

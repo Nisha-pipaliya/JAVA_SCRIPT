@@ -1,3 +1,5 @@
+
+
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -9,8 +11,16 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     if (user && user.email === loginEmail && user.password === loginPassword) {
         alert("Login successful!");
         localStorage.setItem("loggedIn", true);
-        window.location.href = "/index.html";  
+        window.location.href = "../index.html";  
     } else {
         alert("Invalid credentials. Please try again or sign up!");
     }
 });
+
+
+
+
+
+
+
+

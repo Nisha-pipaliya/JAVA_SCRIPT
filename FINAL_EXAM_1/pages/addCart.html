@@ -1,19 +1,49 @@
- <!DOCTYPE html>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Food</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <title>Add Cart</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <form id="food-form">
-    <input type="text" placeholder="Food name" id="food-name" required>
-    <input type="url" placeholder="Food image URL" id="img" required>
-    <input type="number" placeholder="Price" id="food-price" required>
-    <input type="text" placeholder="Description" id="food-description" required>
-    <button type="submit">Add to Cart</button>
-  </form>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="food_data.html">Food List</a>
+        <button><a href="signup.html">Signup</a></button>
+        <button><a href="login.html">Login</a></button>
+    </nav>
+    
+    <h2>Add Food</h2>
+    <form id="add-food-form">
+        <input type="text" id="food-name" placeholder="Food Name" required>
+        <input type="text" id="food-category" placeholder="Category" required>
+        <input type="number" id="food-calories" placeholder="Calories" required>
+        <input type="text" id="food-ingredients" placeholder="Ingredients (comma separated)" required>
+        <input type="number" id="food-price" placeholder="Price" required>
+        <input type="url" id="food-img-url" placeholder="Image URL" required>
+        <button type="submit">Add Food</button>
+    </form>
+    
+    <h2>Food List</h2>
+    <div id="food-list"></div>
+
+    <script src="../js/addCart.js"></script>
 </body>
-<script src="/js/addCart.js"></script>
-</html> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

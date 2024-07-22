@@ -1,18 +1,23 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <a href="/index.html">home</a>
-    <a href="/pages/food_data.html">foodList</a>
-    <button><a href="/pages/signup.html">signup</a></button>
-    <button> <a href="/pages/login.html">login</a></button>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="food_data.html">Food List</a>
+        <button><a href="signup.html">Signup</a></button>
+        <button><a href="login.html">Login</a></button>
+    </nav>
     
     <div class="login-container">
-   
         <h2>Login</h2>
         <form id="login-form">
             <input type="email" id="login-email" placeholder="Email" required>
@@ -20,6 +25,7 @@
             <button type="submit">Login</button>
         </form>
     </div>
+
+    <script src="../js/login.js"></script>
 </body>
-<script src="/js/login.js"></script>
 </html>

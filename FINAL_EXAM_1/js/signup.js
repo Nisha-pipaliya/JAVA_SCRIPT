@@ -1,3 +1,6 @@
+
+
+
 document.getElementById("signup-form").addEventListener("submit", function(event) {
     event.preventDefault();
     let fullName = document.getElementById("fullname").value;
@@ -10,8 +13,13 @@ document.getElementById("signup-form").addEventListener("submit", function(event
         email: email,
         password: password,
         city: City,
-        Pno:Pno
+        Pno: Pno
     };
     localStorage.setItem("user", JSON.stringify(user));
-    window.location.href = "/pages/login.html";
+    window.location.href = "login.html";
 });
+
+
+
+
+

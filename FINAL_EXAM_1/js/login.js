@@ -16,6 +16,21 @@ document.getElementById("login-form").addEventListener("submit", function(event)
         alert("Invalid credentials. Please try again or sign up!");
     }
 });
+fetch('http://localhost:3000/foods', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data);
+    window.location.href = "login.html";
+})
+.catch((error) => {
+    console.error('Error:', error);
+});
 
 
 

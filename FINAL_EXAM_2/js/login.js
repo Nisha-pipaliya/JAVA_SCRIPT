@@ -1,5 +1,5 @@
-
-
+// import json from "../db.json";
+//----DATA DISPLAY
 document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -11,23 +11,25 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     if (user && user.email === loginEmail && user.password === loginPassword) {
         alert("Login successful!");
         localStorage.setItem("loggedIn", true);
-        window.location.href = "../index.html";  
+        localStorage.setItem("role", user.role);
+        window.location.href = "../index.html";
     } else {
         alert("Invalid credentials. Please try again or sign up!");
     }
 });
 
-    // fetch('url...')
-    // .then(response => response.json())
-    // .then(users => {
-    //     let user = users.find(user => user.email === email && user.password === password);
-    //     if (user) {
-    //         console.log('Login successful:', user);
-            
-    //     } else {
-    //         alert('Invalid email or password');
-    //     }
+    // ---------Optional: send user data to a server
+    // fetch('http://localhost:3000/', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(user)
     // })
-    // .catch((error) => {
-    //     console.error('Error:', error);
-    // });
+    // .then(response => response.json())
+    // .then(data => {
+    //     console.log('Success:', data);
+    //     window.location.href = "login.html";
+    // })
+    // .catch(error => console.error('Error:', error));
+
+
+

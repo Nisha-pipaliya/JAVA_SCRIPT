@@ -1,192 +1,110 @@
 
 
-
 const getData = async () => {
     let response = await fetch("https://json-server-hih2.onrender.com/foods", { method: 'GET' });
     let data = await response.json();
-    return data;
+    return data;
 }
-document.addEventListener('DOMContentLoaded', () => {
 
+const renderFoods = (foodsToRender) => {
     const foodList = document.getElementById('food-list');
+    foodList.innerHTML = "";
+    foodsToRender.forEach(food => {
+        let foodItem = document.createElement('div');
+        foodItem.classList.add('food-item');
+
+        let foodImg = document.createElement('img');
+        foodImg.src = food.imgUrl;
+        foodImg.alt = food.name;
+        foodItem.append(foodImg);
+
+        let foodName = document.createElement('h3');
+        foodName.textContent = food.name;
+        foodItem.append(foodName);
+
+        let foodCategory = document.createElement('p');
+        foodCategory.textContent = `Category: ${food.category}`;
+        foodItem.append(foodCategory);
+
+        let foodCalories = document.createElement('p');
+        foodCalories.textContent = `Calories: ${food.calories}`;
+        foodItem.append(foodCalories);
+
+        let foodIngredients = document.createElement('p');
+        foodIngredients.textContent = `Ingredients: ${food.ingredients.join(', ')}`;
+        foodItem.append(foodIngredients);
+
+        let foodPrice = document.createElement('p');
+        foodPrice.textContent = `Price: $${food.price}`;
+        foodItem.append(foodPrice);
+
+        foodList.append(foodItem);
+    });
+};
+
+const filterAndSortFoods = (foods) => {
     const searchInput = document.getElementById('search');
     const categoryFilter = document.getElementById('category-filter');
     const sortBySelect = document.getElementById('sort-by');
 
-    const renderFoods = (foodsToRender) => {
-        foodList.innerHTML = "";
-        foodsToRender.forEach(food => {
-            let foodItem = document.createElement('div');
-            foodItem.classList.add('food-item');
+    let filteredFoods = foods;
 
-            let foodImg = document.createElement('img');
-            foodImg.src = food.imgUrl;
-            foodImg.alt = food.name;
-            foodItem.append(foodImg);
+    const searchTerm = searchInput.value.toLowerCase();
+    if (searchTerm) {
+        filteredFoods = filteredFoods.filter(food =>
+            food.name.toLowerCase().includes(searchTerm) ||
+            food.category.toLowerCase().includes(searchTerm)
+        );
+    }
 
-            let foodName = document.createElement('h3');
-            foodName.textContent = food.name;
-            foodItem.append(foodName);
+    const selectedCategory = categoryFilter ? categoryFilter.value : "";
+    if (selectedCategory && selectedCategory !== "All") {
+        filteredFoods = filteredFoods.filter(food =>
+            food.category == selectedCategory
+        );
+    }
 
-            let foodCategory = document.createElement('p');
-            foodCategory.textContent = `Category: ${food.category}`;
-            foodItem.append(foodCategory);
-
-            let foodCalories = document.createElement('p');
-            foodCalories.textContent = `Calories: ${food.calories}`;
-            foodItem.append(foodCalories);
-
-            let foodIngredients = document.createElement('p');
-            foodIngredients.textContent = `Ingredients: ${food.ingredients.join(', ')}`;
-            foodItem.append(foodIngredients);
-
-            let foodPrice = document.createElement('p');
-            foodPrice.textContent = `Price: $${food.price}`;
-            foodItem.append(foodPrice);
-
-            foodList.append(foodItem);
+    const sortBy = sortBySelect ? sortBySelect.value : "";
+    if (sortBy) {
+        filteredFoods.sort((a, b) => {
+            if (sortBy === 'price-asc') {
+                return a.price - b.price;
+            } else if (sortBy === 'price-desc') {
+                return b.price - a.price;
+            }
+            return 0;
         });
-    };
+    }
 
-    const filterAndSortFoods = () => {
-        let filteredFoods = foods.foods;
+    renderFoods(filteredFoods);
+};
 
-        const searchTerm = searchInput.value.toLowerCase();
-        if (searchTerm) {
-            filteredFoods = filteredFoods.filter(food =>
-                food.name.toLowerCase().includes(searchTerm) ||
-                food.category.toLowerCase().includes(searchTerm)
-            );
-        }
-
-        const selectedCategory = categoryFilter ? categoryFilter.value : "";
-        if (selectedCategory && selectedCategory !== "All") {
-            filteredFoods = filteredFoods.filter(food =>
-                food.category == selectedCategory
-            );
-        }
-
-        const sortBy = sortBySelect ? sortBySelect.value : "";
-        if (sortBy) {
-            filteredFoods.sort((a, b) => {
-                if (sortBy === 'price-asc') {
-                    return a.price - b.price;
-                } else if (sortBy === 'price-desc') {
-                    return b.price - a.price;
-                }
-                return 0;
-            });
-        }
-
-        renderFoods(filteredFoods);
-    };
-
-    renderFoods(foods.foods);
-
-    searchInput.addEventListener('input', filterAndSortFoods);
-    if (categoryFilter) categoryFilter.addEventListener('change', filterAndSortFoods);
-    if (sortBySelect) sortBySelect.addEventListener('change', filterAndSortFoods);
-});
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const foodList = document.getElementById('food-list');
+document.addEventListener('DOMContentLoaded', async () => {
     const searchInput = document.getElementById('search');
     const categoryFilter = document.getElementById('category-filter');
     const sortBySelect = document.getElementById('sort-by');
+
+    let foods = await getData();
 
     // Fetch the foods from localStorage
     let storedFoods = localStorage.getItem("foods");
-    let foods = storedFoods ? JSON.parse(storedFoods) : { foods: [] };
+    if (storedFoods) {
+        storedFoods = JSON.parse(storedFoods);
+        foods = storedFoods.foods.concat(foods);
+    }
 
-    const renderFoods = (foodsToRender) => {
-        foodList.innerHTML = "";
-        foodsToRender.forEach(food => {
-            let foodItem = document.createElement('div');
-            foodItem.classList.add('food-item');
+    renderFoods(foods);
 
-            let foodImg = document.createElement('img');
-            foodImg.src = food.imgUrl;
-            foodImg.alt = food.name;
-            foodItem.append(foodImg);
+    searchInput.addEventListener('input', () => filterAndSortFoods(foods));
+    if (categoryFilter) categoryFilter.addEventListener('change', () => filterAndSortFoods(foods));
+    if (sortBySelect) sortBySelect.addEventListener('change', () => filterAndSortFoods(foods));
 
-            let foodName = document.createElement('h3');
-            foodName.textContent = food.name;
-            foodItem.append(foodName);
-
-            let foodCategory = document.createElement('p');
-            foodCategory.textContent = `Category: ${food.category}`;
-            foodItem.append(foodCategory);
-
-            let foodCalories = document.createElement('p');
-            foodCalories.textContent = `Calories: ${food.calories}`;
-            foodItem.append(foodCalories);
-
-            let foodIngredients = document.createElement('p');
-            foodIngredients.textContent = `Ingredients: ${food.ingredients.join(', ')}`;
-            foodItem.append(foodIngredients);
-
-            let foodPrice = document.createElement('p');
-            foodPrice.textContent = `Price: $${food.price}`;
-            foodItem.append(foodPrice);
-
-            foodList.append(foodItem);
-        });
-    };
-
-    const filterAndSortFoods = () => {
-        let filteredFoods = foods.foods;
-
-        const searchTerm = searchInput.value.toLowerCase();
-        if (searchTerm) {
-            filteredFoods = filteredFoods.filter(food =>
-                food.name.toLowerCase().includes(searchTerm) ||
-                food.category.toLowerCase().includes(searchTerm)
-            );
-        }
-
-        const selectedCategory = categoryFilter ? categoryFilter.value : "";
-        if (selectedCategory && selectedCategory !== "All") {
-            filteredFoods = filteredFoods.filter(food =>
-                food.category == selectedCategory
-            );
-        }
-
-        const sortBy = sortBySelect ? sortBySelect.value : "";
-        if (sortBy) {
-            filteredFoods.sort((a, b) => {
-                if (sortBy === 'price-asc') {
-                    return a.price - b.price;
-                } else if (sortBy === 'price-desc') {
-                    return b.price - a.price;
-                }
-                return 0;
-            });
-        }
-
-        renderFoods(filteredFoods);
-    };
-
-    renderFoods(foods.foods);
-
-    searchInput.addEventListener('input', filterAndSortFoods);
-    if (categoryFilter) categoryFilter.addEventListener('change', filterAndSortFoods);
-    if (sortBySelect) sortBySelect.addEventListener('change', filterAndSortFoods);
+    document.querySelector("#find-me").addEventListener("click", geoFindMe);
 });
-
-
-
-
-
-// ---------------------------NEW LOCATION
-
-
 
 const geoFindMe = () => {
     const status = document.querySelector("#status");
     const mapLink = document.querySelector("#map-link");
-    const foodList = document.querySelector("#food-list");
 
     mapLink.href = "";
     mapLink.textContent = "";
@@ -196,8 +114,6 @@ const geoFindMe = () => {
         const longitude = position.coords.longitude;
 
         status.textContent = "Fetching location data...";
-        console.log(`lat=${latitude}`);
-        console.log(`lon=${longitude}`);
         fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`)
             .then(response => response.json())
             .then(data => {
@@ -253,20 +169,3 @@ const displayFoodList = (userCity) => {
         foodList.innerHTML = `<p>No available food items for your location.</p>`;
     }
 };
-
-document.querySelector("#find-me").addEventListener("click", geoFindMe);
-
-// Optional: Check and request permission on page load
-document.addEventListener("DOMContentLoaded", () => {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            () => {},  // Do nothing on success
-            (error) => {
-                if (error.code === error.PERMISSION_DENIED) {
-                    alert("Geolocation permission is denied. You need to allow location access for full functionality.");
-                }
-            }
-        );
-    }
-});
-

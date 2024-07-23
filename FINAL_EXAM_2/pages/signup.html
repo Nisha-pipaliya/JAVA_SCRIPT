@@ -1,36 +1,46 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signup</title>
+    <title>Signup</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-    <nav id="navbar">
-        <a href="/index.html">home</a>
-        <a href="/pages/course.html">courses</a>
-        <a href="/pages/dashboard.html">dashboard</a>
-        <a href="/pages/login.html">login</a>
-        <a href="/pages/signup.html">signup</a>
-       </nav>
+   <!-- NAVBAR START -->
+   <nav id="navbar">
+    <a href="/index.html">Home</a>
+    <a href="/pages/course.html">Courses</a>
+    <a href="/pages/dashboard.html">Dashboard</a>
+    <a href="/pages/login.html">Login</a>
+    <a href="/pages/signup.html">Signup</a>
+</nav>
+    <!-- NAVBAR END -->
 
-    <h2>Signup</h2>
-    <form id="signup-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <label for="role">Role:</label>
-        <select id="role" name="role" required>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select><br>
-        <button type="submit">Signup</button>
-    </form>
 
+<!-- FORM START -->
+ 
+<h2>Signup</h2>
+<form id="signup-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <label for="role">Role:</label>
+    <select id="role" name="role" required>
+        <option value="user">User</option>
+        <option value="admin">Admin</option>
+    </select><br>
+    <button type="submit">Signup</button>
+</form>
+ <!-- FORM END -->
+
+    
 </body>
 <script src="/js/signup.js"></script>
 </html>

@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dashboard</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
+
+    <div>
+        <input type="text" id="search-bar" placeholder="Search courses">
+        <button id="sort-price">Sort by Price</button>
+        <button id="sort-discount">Sort by Discount</button>
+    </div>
 
     <nav id="navbar">
         <a href="/index.html">home</a>
@@ -13,8 +21,27 @@
         <a href="/pages/dashboard.html">dashboard</a>
         <a href="/pages/login.html">login</a>
         <a href="/pages/signup.html">signup</a>
-       </nav>
-    <h2>dashboard</h2>
+    </nav>
+    <h2>Dashboard</h2>
+
+    <table id="course-table">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Sub-title</th>
+                <th>Fees</th>
+                <th>Discount Fees</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JAVA SCRIPT -->
+        </tbody>
+    </table>
+
+    <script src="/js/dashboard.js"></script>
     
 </body>
 </html>

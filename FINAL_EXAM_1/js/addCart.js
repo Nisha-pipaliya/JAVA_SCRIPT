@@ -2,11 +2,11 @@
 document.getElementById("add-food-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    // Fetch the current foods from localStorage
+    // -------------------------------Fetch the current foods from localStorage
     let storedFoods = localStorage.getItem("foods");
     let foods = storedFoods ? JSON.parse(storedFoods) : { foods: [] };
 
-    // Collect form data
+    // --------------------Collect form data
     let foodName = document.getElementById("food-name").value;
     let foodCategory = document.getElementById("food-category").value;
     let foodCalories = document.getElementById("food-calories").value;
@@ -14,7 +14,7 @@ document.getElementById("add-food-form").addEventListener("submit", function(eve
     let foodPrice = document.getElementById("food-price").value;
     let foodImgUrl = document.getElementById("food-img-url").value;
 
-    // Create new food object
+    // ----------------------------------Create new food object
     let newFood = {
         id: Date.now(),
         name: foodName,
@@ -28,13 +28,12 @@ document.getElementById("add-food-form").addEventListener("submit", function(eve
         quantity: 1
     };
 
-    // Add the new food to the foods array
+    //--------------------------------------------------- Add the new food to the foods array
     foods.foods.push(newFood);
 
-    // Save updated foods to localStorage
+    // --------------------------------------------------Save updated foods to localStorage
     localStorage.setItem("foods", JSON.stringify(foods));
 
-    // Alert and redirect
     alert("Food added successfully!");
     window.location.href = "../index.html";
 });
@@ -135,5 +134,20 @@ function buoyFood(foodId) {
     alert("Buoy successfully!");
 }
 
-// Initial display of food list
 document.addEventListener("DOMContentLoaded", displayFoodList);
+
+fetch('http://localhost:3000/foods', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user)
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Success:', data);
+    window.location.href = "login.html";
+})
+.catch((error) => {
+    console.error('Error:', error);
+});

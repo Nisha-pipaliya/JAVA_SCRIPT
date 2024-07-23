@@ -1,14 +1,12 @@
 
 
+
+const getData = async () => {
+    let response = await fetch("https://json-server-hih2.onrender.com/foods", { method: 'GET' });
+    let data = await response.json();
+    return data;
+}
 document.addEventListener('DOMContentLoaded', () => {
-
-
-    // let userdetails = JSON.parse(localStorage.getItem("user"));
-    // let isLogin = localStorage.getItem("isLogin") || false;
-    // if (!isLogin) {
-    //     window.location.href = "/pages/login.html";
-    // }
-
 
     const foodList = document.getElementById('food-list');
     const searchInput = document.getElementById('search');
@@ -183,6 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ---------------------------NEW LOCATION
 
+
+
 const geoFindMe = () => {
     const status = document.querySelector("#status");
     const mapLink = document.querySelector("#map-link");
@@ -196,7 +196,8 @@ const geoFindMe = () => {
         const longitude = position.coords.longitude;
 
         status.textContent = "Fetching location data...";
-
+        console.log(`lat=${latitude}`);
+        console.log(`lon=${longitude}`);
         fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`)
             .then(response => response.json())
             .then(data => {
@@ -210,16 +211,18 @@ const geoFindMe = () => {
             })
             .catch(error => {
                 status.textContent = "Unable to retrieve location data";
+                console.error(error);
             });
-    }
+    };
 
     const error = (err) => {
         if (err.code === err.PERMISSION_DENIED) {
             alert("Geolocation permission is denied. You need to allow location access for full functionality.");
         } else {
             status.textContent = "Unable to retrieve your location";
+            console.error(err);
         }
-    }
+    };
 
     if (!navigator.geolocation) {
         status.textContent = "Geolocation is not supported by your browser";
@@ -227,7 +230,7 @@ const geoFindMe = () => {
         status.textContent = "Locating…";
         navigator.geolocation.getCurrentPosition(success, error);
     }
-}
+};
 
 const displayFoodList = (userCity) => {
     const foodList = document.querySelector("#food-list");
@@ -249,7 +252,7 @@ const displayFoodList = (userCity) => {
         alert("You are not in a city where we deliver food. You cannot order.");
         foodList.innerHTML = `<p>No available food items for your location.</p>`;
     }
-}
+};
 
 document.querySelector("#find-me").addEventListener("click", geoFindMe);
 
@@ -266,6 +269,4 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 });
-
-
 

@@ -1,110 +1,128 @@
 {
-    "foods": [
-      {
-        "name": "Pizza",
-        "category": "Main Course",
-        "calories": 250,
-        "ingredients": ["Dough", "Tomato Sauce", "Cheese"],
-        "price": 10.99
-      },
-      {
-        "name": "Burger",
-        "category": "Main Course",
-        "calories": 350,
-        "ingredients": ["Bun", "Beef Patty", "Lettuce", "Tomato", "Cheese"],
-        "price": 8.99
-      },
-      {
-        "name": "Salad",
-        "category": "Appetizer",
-        "calories": 150,
-        "ingredients": ["Lettuce", "Tomato", "Cucumber", "Olives", "Feta Cheese"],
-        "price": 6.99
-      },
-      {
-        "name": "Pasta",
-        "category": "Main Course",
-        "calories": 400,
-        "ingredients": ["Pasta", "Tomato Sauce", "Garlic", "Basil", "Parmesan"],
-        "price": 12.99
-      },
-      {
-        "name": "Ice Cream",
-        "category": "Dessert",
-        "calories": 200,
-        "ingredients": ["Milk", "Sugar", "Cream", "Vanilla"],
-        "price": 4.99
-      },
-      {
-        "name": "Sushi",
-        "category": "Main Course",
-        "calories": 300,
-        "ingredients": ["Rice", "Seaweed", "Fish", "Soy Sauce"],
-        "price": 14.99
-      },
-      {
-        "name": "Tacos",
-        "category": "Main Course",
-        "calories": 250,
-        "ingredients": ["Tortilla", "Beef", "Lettuce", "Cheese", "Salsa"],
-        "price": 9.99
-      },
-      {
-        "name": "Soup",
-        "category": "Appetizer",
-        "calories": 100,
-        "ingredients": ["Broth", "Vegetables", "Salt", "Pepper"],
-        "price": 5.99
-      },
-      {
-        "name": "Steak",
-        "category": "Main Course",
-        "calories": 450,
-        "ingredients": ["Beef", "Salt", "Pepper", "Garlic"],
-        "price": 19.99
-      },
-      {
-        "name": "Fries",
-        "category": "Side",
-        "calories": 300,
-        "ingredients": ["Potatoes", "Salt", "Oil"],
-        "price": 3.99
-      },
-      {
-        "name": "Smoothie",
-        "category": "Drink",
-        "calories": 150,
-        "ingredients": ["Fruit", "Yogurt", "Honey"],
-        "price": 5.99
-      },
-      {
-        "name": "Pancakes",
-        "category": "Breakfast",
-        "calories": 350,
-        "ingredients": ["Flour", "Milk", "Eggs", "Syrup"],
-        "price": 7.99
-      },
-      {
-        "name": "Grilled Cheese",
-        "category": "Snack",
-        "calories": 400,
-        "ingredients": ["Bread", "Butter", "Cheese"],
-        "price": 4.99
-      },
-      {
-        "name": "Chicken Wings",
-        "category": "Appetizer",
-        "calories": 250,
-        "ingredients": ["Chicken", "Spices", "Sauce"],
-        "price": 8.99
-      },
-      {
-        "name": "Brownie",
-        "category": "Dessert",
-        "calories": 300,
-        "ingredients": ["Chocolate", "Butter", "Sugar", "Flour"],
-        "price": 3.99
-      }
-    ]
-  }
-  
+  "foods": [
+ 
+    {
+      "name": "Pizza",
+      "category": "Main Course",
+      "calories": 250,
+      "ingredients": ["Dough", "Tomato Sauce", "Cheese"],
+      "price": 10.99,
+      "imgUrl": "https://i.pinimg.com/736x/f9/6b/d8/f96bd8d65e30ea005ae52bf06e32cfe8.jpg"
+  },
+  {
+      "name": "Burger",
+      "category": "Main Course",
+      "calories": 350,
+      "ingredients": ["Bun", "Beef Patty", "Lettuce", "Tomato", "Cheese"],
+      "price": 8.99,
+      "imgUrl": "https://t4.ftcdn.net/jpg/05/85/29/13/360_F_585291338_0J8Q8vYbKDCu8yqqwAO8PsQZ4ESP2zd8.jpg"
+    },
+    {
+      "name": "Salad",
+      "category": "Appetizer",
+      "calories": 150,
+      "ingredients": ["Lettuce", "Tomato", "Cucumber", "Olives", "Feta Cheese"],
+      "price": 6.99,
+      "imgUrl": "https://i.pinimg.com/736x/40/2a/99/402a99c710f1da71b9f1f95632b70e08.jpg"
+    },
+    {
+      "name": "Pasta",
+      "category": "Main Course",
+      "calories": 400,
+      "ingredients": ["Pasta", "Tomato Sauce", "Garlic", "Basil", "Parmesan"],
+      "price": 12.99,
+      "imgUrl": "https://img.freepik.com/free-psd/top-view-delicious-food_23-2150634080.jpg"
+    },
+    {
+      "name": "Ice Cream",
+      "category": "Dessert",
+      "calories": 200,
+      "ingredients": ["Milk", "Sugar", "Cream", "Vanilla"],
+      "price": 4.99,
+      "imgUrl": "https://t3.ftcdn.net/jpg/05/66/23/46/360_F_566234629_KhWxmzVVGHg8iHnbiuMR0kNgFhbSE7g8.jpg"
+    },
+    {
+      "name": "Sushi",
+      "category": "Main Course",
+      "calories": 300,
+      "ingredients": ["Rice", "Seaweed", "Fish", "Soy Sauce"],
+      "price": 14.99,
+      "imgUrl": "https://www.shutterstock.com/image-photo/sushi-roll-chopsticks-isolated-on-260nw-1695244495.jpg"
+    },
+    {
+      "name": "Tacos",
+      "category": "Main Course",
+      "calories": 250,
+      "ingredients": ["Tortilla", "Beef", "Lettuce", "Cheese", "Salsa"],
+      "price": 9.99,
+      "imgUrl": "https://atlas-content-cdn.pixelsquid.com/stock-images/crunchy-taco-z0A3dVD-600.jpg"
+    },
+    {
+      "name": "Soup",
+      "category": "Appetizer",
+      "calories": 100,
+      "ingredients": ["Broth", "Vegetables", "Salt", "Pepper"],
+      "price": 5.99,
+      "imgUrl": "https://www.pngkey.com/png/detail/206-2063378_soup-download-transparent-png-image-mix-veg-soup.png"
+    },
+    {
+      "name": "Steak",
+      "category": "Main Course",
+      "calories": 450,
+      "ingredients": ["Beef", "Salt", "Pepper", "Garlic"],
+      "price": 19.99,
+      "imgUrl": "https://www.kindpng.com/picc/m/20-206592_steak-meat-png-transparent-png.png"
+    },
+    {
+      "name": "Fries",
+      "category": "Side",
+      "calories": 300,
+      "ingredients": ["Potatoes", "Salt", "Oil"],
+      "price": 3.99,
+      "imgUrl": "https://i.pinimg.com/736x/70/49/61/704961d2f6aff08cddc62f937000f0cc.jpg"
+    },
+    {
+      "name": "Smoothie",
+      "category": "Drink",
+      "calories": 150,
+      "ingredients": ["Fruit", "Yogurt", "Honey"],
+      "price": 5.99,
+      "imgUrl": "https://i.pinimg.com/736x/96/83/44/9683447528d7e67b068c96a7ee80cc33.jpg"
+    },
+    {
+      "name": "Pancakes",
+      "category": "Breakfast",
+      "calories": 350,
+      "ingredients": ["Flour", "Milk", "Eggs", "Syrup"],
+      "price": 7.99,
+      "imgUrl": "https://atlas-content-cdn.pixelsquid.com/stock-images/american-pancakes-pancake-D5Qw4aB-600.jpg"
+    },
+    {
+      "name": "Grilled Cheese",
+      "category": "Snack",
+      "calories": 400,
+      "ingredients": ["Bread", "Butter", "Cheese"],
+      "price": 4.99,
+      "imgUrl": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yM19kaWdpdGFsX3BhaW50X29mX2dyaWxsZWRfY2hlZXNlX2lzb2xhdGVkX29uX18zM2UzOTcxMi02ZWUxLTRiOTItYTY0Ni1hNTRjYmU1ODkxYmRfMS5qcGc.jpg"
+    },
+    {
+      "name": "Chicken Wings",
+      "category": "Appetizer",
+      "calories": 250,
+      "ingredients": ["Chicken", "Spices", "Sauce"],
+      "price": 8.99,
+      "imgUrl": "https://img.freepik.com/free-photo/meat-meal-baked-lunch-delicious_1203-5498.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721520000&semt=ais_user"
+    },
+    {
+      "name": "Brownie",
+      "category": "Dessert",
+      "calories": 300,
+      "ingredients": ["Chocolate", "Butter", "Sugar", "Flour"],
+      "price": 3.99,
+      "imgUrl": "https://img.freepik.com/free-photo/chocolate-brownie-portion-isolated-white-background_123827-27904.jpg"
+    }
+  ]
+}
+
+
+

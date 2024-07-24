@@ -4,7 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results');
     const timerContainer = document.getElementById('timer');
     const captureButton = document.getElementById('capture');
+    const footer = document.getElementById('footer');
 
+    let tabSwitchCount = 0;
+    let totalTimeSpent = 0;
+    let lastSwitchTime = 0;
+    let tabsSwitched = 0;
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+            tabSwitchCount++;
+            lastSwitchTime = performance.now();
+            tabsSwitched++;
+        } else if (document.visibilityState === 'visible' && lastSwitchTime !== 0) {
+            const timeSpent = (performance.now() - lastSwitchTime) / 1000; //---------------------- MILLISECND
+            totalTimeSpent += timeSpent;
+            lastSwitchTime = 0; //--------------------------LAST SWITCHED TIME
+        }
+    });
+//---------------------------------------------- DISPLAY THE FOOTER OF MY TIMER USE OF THE TAB 
+    function updateFooter() {
+        footer.textContent = `Tab switches: ${tabSwitchCount} | Time spent in other tabs: ${totalTimeSpent.toFixed(2)} seconds | Tabs switched: ${tabsSwitched}`;
+        requestAnimationFrame(updateFooter);
+    }
+
+    updateFooter();
+
+    // ---------------------------------------------QUESTION
     let questions = [
         {
             "question": "What is the capital of France?",
@@ -130,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000);
 
-    // DISPLAY QUIZ QUESTIONS
+    // -----------------------------------------DISPLAY QUIZ QUESTIONS
     const displayQuiz = (quizData) => {
         const output = [];
 
@@ -155,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         quizContainer.innerHTML = output.join('');
     };
 
-    // FUNCTION TO SHOW RESULTS
+    // --------------------------------------------------------FUNCTION TO SHOW RESULTS
     const showResults = (quizData) => {
         const answerContainers = quizContainer.querySelectorAll('.options');
         let numCorrect = 0;
@@ -176,24 +202,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         resultsContainer.innerHTML = `Correct: ${numCorrect} out of ${quizData.length}<br>
-                                      Incorrect: ${numIncorrect} out of ${quizData.length}`;
+                                    Incorrect: ${numIncorrect} out of ${quizData.length}`;
     };
 
-    // DISPLAY QUIZ QUESTIONS ON PAGE LOAD
+    // ---------------------------------------DISPLAY QUIZ QUESTIONS ON PAGE LOAD
     displayQuiz(questions);
 
-    // SUBMIT BUTTON EVENT
+    //----------------------------------------- SUBMIT BUTTON EVENT
     submitButton.addEventListener('click', () => {
         clearInterval(timer);
         showResults(questions);
     });
 
-    // CAPTURE PHOTO BUTTON EVENT
+    // ------------------------------------------CAPTURE PHOTO BUTTON EVENT
     captureButton.addEventListener('click', () => {
         openCamera(); 
     });
 
-    // FUNCTION TO OPEN CAMERA
+    // ----------------------------------------FUNCTION TO OPEN CAMERA
     const openCamera = () => {
         const constraints = {
             video: true
@@ -220,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     };
 
-    // FUNCTION TO CAPTURE PHOTO FROM VIDEO STREAM
+    // ------------------------------FUNCTION TO CAPTURE PHOTO FROM VIDEO STREAM
     const capturePhoto = (videoElement) => {
         const canvas = document.createElement('canvas');
         canvas.width = videoElement.videoWidth;
@@ -232,11 +258,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = document.createElement('img');
         img.src = canvas.toDataURL('image/jpeg');
 
-        // Display captured photo (you can modify this part as per your requirements)
+        // ----PHOTO CAPTURE 
         resultsContainer.innerHTML = '';
         resultsContainer.appendChild(img);
 
-        // Stop video stream
+        //------------------------ VIDEO STREAM STOP 
         videoElement.srcObject.getVideoTracks().forEach(track => track.stop());
     };
 });

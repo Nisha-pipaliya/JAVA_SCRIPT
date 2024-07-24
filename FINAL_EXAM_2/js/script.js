@@ -37,40 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
     renderPurchasedCourses();
 });
 
+//USER ADMIN 
 
-
-
-//------ PORTAL
-
-const hamb = document.querySelector("#nav-icon");
-const menu = document.querySelector(".menubox");
-
-hamb.addEventListener("click", function () {
-  hamb.classList.toggle("open");
-  menu.classList.toggle("menu-open");
-});
-
-
-const dashbtn = document.querySelector("#dashbutton");
-const dashbtnmenu = document.querySelector("#dashbuttonmenu");
-const overlay = document.querySelector("#overlay");
-const modal = document.querySelector("#loginmodal");
-const closebtn = document.querySelector("#closebtn");
-
-const handlemodal=()=> {
-  modal.style.display = "block";
-  overlay.style.display = "block";
-  document.body.style.position = "fixed";
-}
-function modalclose() {
-  modal.style.display = "none";
-  overlay.style.display = "none";
-  document.body.style.position = "relative";
-}
-dashbtn.addEventListener("click", handlemodal);
-dashbtnmenu.addEventListener("click", handlemodal);
-closebtn.addEventListener("click", modalclose);
-overlay.addEventListener("click", modalclose);
 
  // ---------Optional: send user data to a server
     // fetch('http://localhost:3000/', {

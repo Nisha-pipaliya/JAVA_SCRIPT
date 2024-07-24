@@ -24,7 +24,7 @@ document.getElementById("course-form").addEventListener("submit", function(event
     courses.push(newCourse);
     localStorage.setItem("courses", JSON.stringify(courses));
 
-    window.location.href = "/pages/dashboard.html";
+    window.location.href = "/FINAL_EXAM_2/pages/dashboard.html";
 });
 
     // ---------Optional: send user data to a server

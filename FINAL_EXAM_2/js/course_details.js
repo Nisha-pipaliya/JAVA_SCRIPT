@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             courses = courses.filter(c => c.course_title !== course.course_title);
             localStorage.setItem("courses", JSON.stringify(courses));
             window.location.href = "/index.html"; 
+            window.location.href="/FINAL_EXAM_2/index.html"
         });
         // --------------------------------SHOW DIFFRENT PAGE
         document.getElementById("show-details").addEventListener("click", function() {
@@ -33,10 +34,12 @@ document.addEventListener("DOMContentLoaded", function() {
             purchasedCourses.push(course);
             localStorage.setItem("purchasedCourses", JSON.stringify(purchasedCourses));
             window.location.href = "/index.html"; 
+            window.location.href="/FINAL_EXAM_2/index.html"
         });
     } else {
         alert("No course selected");
         window.location.href = "/index.html"; 
+        window.location.href="/FINAL_EXAM_2/index.html"
     }
 });
 

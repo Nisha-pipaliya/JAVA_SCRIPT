@@ -1,4 +1,4 @@
-/* Global Styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     color: #333;
 }
 
-/* Navbar Styles */
 nav#navbar {
     background: #333;
     color: #fff;
@@ -34,7 +33,7 @@ nav#navbar a:hover {
     border-radius: 5px;
 }
 
-/* Form Styles */
+
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -56,7 +55,7 @@ form input, form select, form button {
     border-radius: 5px;
 }
 
-/* Buttons */
+
 button {
     background: #333;
     color: #fff;
@@ -69,7 +68,7 @@ button:hover {
     background: #575757;
 }
 
-/* Container for Purchased Courses */
+
 #purchased-courses-container {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +96,7 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Responsive Table Styles */
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -139,7 +138,7 @@ th, td {
     }
 }
 
-/* Course Details Styles */
+
 #course-details {
     max-width: 600px;
     margin: 20px auto;
@@ -155,7 +154,7 @@ th, td {
     border-radius: 5px;
 }
 
-/* Login and Signup Styles */
+
 .login-container {
     max-width: 400px;
     margin: 20px auto;
@@ -170,7 +169,7 @@ th, td {
     flex-direction: column;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 600px) {
     nav#navbar {
         flex-direction: column;

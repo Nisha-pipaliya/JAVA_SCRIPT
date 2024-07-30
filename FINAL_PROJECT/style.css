@@ -1,0 +1,165 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #2c3e50, #bdc3c7);
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+h2 {
+    text-align: center;
+    color: #f1c40f;
+}
+
+a {
+    text-decoration: none;
+    color: #ecf0f1;
+}
+
+a:hover {
+    color: #f1c40f;
+}
+
+/* Navbar */
+#navbar {
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#navbar a {
+    margin: 0 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+#navbar a:hover {
+    color: #f1c40f;
+}
+
+/* Forms */
+form {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+form input {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+form select {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+form button {
+    background: #f1c40f;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #e67e22;
+}
+
+/* Course Details */
+#course-details {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#course-details img {
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+/* Dashboard */
+#search-bar {
+    width: calc(100% - 200px);
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    border: none;
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+button {
+    background: #f1c40f;
+    color: #2c3e50;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background: #e67e22;
+}
+
+#course-table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+#course-table th, #course-table td {
+    border: 1px solid #7f8c8d;
+    padding: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#course-table th {
+    background: #2c3e50;
+    color: #f1c40f;
+}
+
+#course-table td {
+    color: #ecf0f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar a {
+        margin: 10px 0;
+    }
+
+    form, #course-details {
+        width: 90%;
+    }
+
+    #search-bar {
+        width: 90%;
+    }
+}
+
